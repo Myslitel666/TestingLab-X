@@ -12,14 +12,14 @@ const PopularProducts: React.FC = () => {
         labName: number; imageUrl: string
     }[]>([]);
 
-    const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+    const [hoveredLabBox, setHoveredLabBox] = useState<number | null>(null);
 
     const handleMouseEnter = (descriptionLabsId: number) => {
-        setHoveredProduct(descriptionLabsId);
+        setHoveredLabBox(descriptionLabsId);
     };
 
     const handleMouseLeave = () => {
-        setHoveredProduct(null);
+        setHoveredLabBox(null);
     };
 
     const theme = useTheme();
@@ -46,13 +46,13 @@ const PopularProducts: React.FC = () => {
                 paddingTop: '13px',
                 paddingBottom: '27px'
                 }}>
-                {popularProducts.map((product) => (
-                    <Grid item xs={2} md={2} key={product.descriptionLabsId}>
+                {popularProducts.map((labBox) => (
+                    <Grid item xs={2} md={2} key={labBox.descriptionLabsId}>
                         <Box
-                            onMouseEnter={() => handleMouseEnter(product.descriptionLabsId)}
+                            onMouseEnter={() => handleMouseEnter(labBox.descriptionLabsId)}
                             onMouseLeave={handleMouseLeave}
                             sx={{
-                                border: `1px solid ${hoveredProduct === product.descriptionLabsId ? PrimaryDarkColor : PrimaryMainColor}`,
+                                border: `1px solid ${hoveredLabBox === labBox.descriptionLabsId ? PrimaryDarkColor : PrimaryMainColor}`,
                                 borderRadius: '10px',
                                 padding: '10px',
                                 textAlign: 'center',
@@ -62,8 +62,8 @@ const PopularProducts: React.FC = () => {
                         >
                             {/* Фотография товара */}
                             <img
-                                src={product.imageUrl}
-                                alt={product.labDescription}
+                                src={labBox.imageUrl}
+                                alt={labBox.labDescription}
                                 style={{
                                     maxWidth: '100%',
                                     maxHeight: '200px',
@@ -82,18 +82,18 @@ const PopularProducts: React.FC = () => {
                                     transition: 'color 1s ease'
                                 }}
                             >
-                                {product.labName}
+                                {labBox.labName}
                             </Typography>
                             <Typography
                                 className="product-name"
                                 variant="subtitle1">
-                                {product.labDescription}
+                                {labBox.labDescription}
                             </Typography>
                             <MyButton
                                 variant="contained"
                                 color="primary"
                                 sx={{ marginBottom: '5px', }}>
-                                Add to Cart
+                                View Lab Page
                             </MyButton>
                         </Box>
                     </Grid>

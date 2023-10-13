@@ -49,10 +49,10 @@ const CategoryMenu: React.FC = () => {
 
     return (
         <div className="category-menu">
-            {data.map((category, index) => (
+            {data.map((labObject, index) => (
                 <div key={index} className="category-item">
-                    {renderIcon(category.labIcon) || <div>No Icon </div>}
-                    {category.labName}
+                    {renderIcon(labObject.labIcon) || <div>No Icon </div>}
+                    {labObject.labName}
                 </div>
             ))}
         </div>

@@ -5,6 +5,8 @@ import Header from '../../Common/Header/Header';
 import PopularProducts from '../Home/PopularProducts';
 import CategoryMenu from '../../Common/Header/CategoryMenu';
 
+import Button, { ButtonProps } from '@mui/material/Button';
+
 const Home: React.FC = () => {
     return (
         <div>
