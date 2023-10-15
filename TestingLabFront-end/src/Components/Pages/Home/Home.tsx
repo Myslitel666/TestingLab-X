@@ -2,8 +2,8 @@
 
 //MyComponents Import
 import Header from '../../Common/Header/Header';
-import PopularProducts from '../Home/PopularProducts';
-import CategoryMenu from '../../Common/Header/CategoryMenu';
+import LabsBoxes from '../Home/PopularProducts';
+import LabsMenu from '../../Common/Header/LabsMenu';
 
 import Button, { ButtonProps } from '@mui/material/Button';
 
@@ -11,8 +11,8 @@ const Home: React.FC = () => {
     return (
         <div>
             <Header />
-            <CategoryMenu />
-            <PopularProducts />
+            <LabsMenu />
+            <LabsBoxes />
         </div>
     );
 };

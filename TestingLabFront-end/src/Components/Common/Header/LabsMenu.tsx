@@ -27,7 +27,7 @@ const renderIcon = (iconName: string) => {
     return iconMappings[iconName] || null;
 };
 
-const CategoryMenu: React.FC = () => {
+const LabsMenu: React.FC = () => {
     const [data, setData] = useState<{ labName: string; labIcon: string }[]>([]);
 
     useEffect(() => {
@@ -59,4 +59,4 @@ const CategoryMenu: React.FC = () => {
     );
 };
 
-export default CategoryMenu;
+export default LabsMenu;

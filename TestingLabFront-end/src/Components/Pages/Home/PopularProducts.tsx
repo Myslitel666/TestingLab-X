@@ -6,7 +6,7 @@ import './PopularProducts.css'; // Импортируйте стили
 import { useTheme } from '@mui/material/styles';
 import MyButton from '../../Common/MyButton'
 
-const PopularProducts: React.FC = () => {
+const LabsBoxes: React.FC = () => {
     const [popularProducts, setPopularProducts] = useState<{
         descriptionLabsId: number; labDescription: string;
         labName: number; imageUrl: string
@@ -103,4 +103,4 @@ const PopularProducts: React.FC = () => {
     );
 };
 
-export default PopularProducts;
+export default LabsBoxes;

@@ -10,14 +10,7 @@ function App() {
             <CssBaseline />
             <Router>
                 <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                <Home />
-                            </div>
-                        }
-                    />
+                    <Route path="/" element={<Home />} /> {/* Устанавливаем маршрут для компонента Home на главной странице */}
                 </Routes>
             </Router>
         </ColorModeProvider>
