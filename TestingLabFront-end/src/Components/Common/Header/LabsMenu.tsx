@@ -12,7 +12,7 @@ import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
 import ArchiveIcon from '@mui/icons-material/Archive';
 
 //CSS Import
-import './CategoryMenu.css';
+import './LabsMenu.css';
 
 const renderIcon = (iconName: string) => {
     const iconMappings: { [key: string]: React.ReactNode } = {
@@ -32,14 +32,14 @@ const LabsMenu: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-/*            try {*/
+            try {
                 const response = await axios.get<{
                     labName: string; labIcon: string
                 }[]>('https://localhost:7275/api/home/categories');
                 setData(response.data);
-            //} catch (error) {
-            //    console.error('Error fetching data:', error);
-            //}
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         };
 
         fetchData();
@@ -51,7 +51,7 @@ const LabsMenu: React.FC = () => {
         <div className="category-menu">
             {data.map((labObject, index) => (
                 <div key={index} className="category-item">
-                    {renderIcon(labObject.labIcon) || <div>No Icon </div>}
+                    {renderIcon(labObject.labIcon) || <div>No Icon</div>}
                     {labObject.labName}
                 </div>
             ))}

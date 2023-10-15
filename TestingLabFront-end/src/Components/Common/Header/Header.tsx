@@ -19,6 +19,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import Link from '@mui/material/Link';
 
 //MyComponents Import
 import HeaderContent from '../Header/HeaderContent';
@@ -86,6 +87,12 @@ export default function PersistentDrawerLeft() {
         setOpen(false);
     };
 
+    const links = [
+        <Link underline="none" color = "white" href='/TestingLab3/Problem'>Formulation of the problem</Link>,
+        <Link underline="none" color="white" href='/TestingLab3/Graph'>Graph control program</Link>,
+        <Link underline="none" color="white" href='/TestingLab3/Testing'>Testing and table with test options</Link>
+    ];
+
     return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CssBaseline />
@@ -124,16 +131,17 @@ export default function PersistentDrawerLeft() {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Formulation of the problem', 'Graph control program', 'Testing and table with test options'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
+                    {links.map((link, index) => (
+                        <ListItem key={index}>
+                            {index % 2 === 0 ? (
                                 <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    <InboxIcon />
                                 </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItemButton>
+                            ) : <ListItemIcon><MailIcon /></ListItemIcon>}
+                            <ListItemText primary={link} />
                         </ListItem>
                     ))}
+
                 </List>
                 <Divider />
                 <List>

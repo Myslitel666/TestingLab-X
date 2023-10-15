@@ -9,6 +9,7 @@ import MyButton from '../MyButton';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { useTheme } from '@mui/material/styles';
+import Link from '@mui/material/Link';
 
 export default function HeaderContent() {
     const theme = useTheme();
@@ -17,7 +18,9 @@ export default function HeaderContent() {
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <Logo />
-            <ShopName />
+            <Link underline="none" href = "/">
+                <ShopName />
+            </Link>
             <div style={{ flexGrow: 1, marginRight: '150px' }}></div>
             <div style={{
                 display: 'flex', alignItems: 'center',

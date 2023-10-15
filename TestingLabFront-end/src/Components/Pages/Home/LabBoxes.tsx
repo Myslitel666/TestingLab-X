@@ -2,9 +2,10 @@
 import axios from 'axios';
 import { Paper, Typography, Grid, Box, } from '@mui/material';
 import { Button } from '@mui/material';
-import './PopularProducts.css'; // Импортируйте стили
 import { useTheme } from '@mui/material/styles';
 import MyButton from '../../Common/MyButton'
+
+import '../Home/LabBoxes.css'; // Импортируйте стили
 
 const LabsBoxes: React.FC = () => {
     const [popularProducts, setPopularProducts] = useState<{

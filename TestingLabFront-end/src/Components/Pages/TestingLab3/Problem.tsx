@@ -1,20 +1,17 @@
-﻿import React from 'react';
+import React from 'react';
 
 //MyComponents Import
 import Header from '../../Common/Header/Header';
-import LabsBoxes from './LabBoxes';
 import LabsMenu from '../../Common/Header/LabsMenu';
 
-import Button, { ButtonProps } from '@mui/material/Button';
-
-const Home: React.FC = () => {
+const Problem: React.FC = () => {
     return (
         <div>
             <Header />
             <LabsMenu />
-            <LabsBoxes />
+            Problem
         </div>
     );
 };
 
-export default Home;
+export default Problem;
