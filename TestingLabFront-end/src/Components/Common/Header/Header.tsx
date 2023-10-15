@@ -133,20 +133,30 @@ export default function PersistentDrawerLeft() {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {links.map((link, index) => (
-                        <MyTypography>
-                            <ListItem key={index}>
-                                <ListItemButton>
-                                    {index % 2 === 0 ? (
-                                            <InboxIcon />
-                                    ) : <MailIcon />}
-
-                                    <ListItemText sx={{ marginLeft: "20px" }} primary={link} />
-                                </ListItemButton>
-                            </ListItem>
-                        </MyTypography>
-                    ))}
-
+                    <MyLink href='/TestingLab3/Problem'>
+                        <ListItem>
+                            <ListItemButton>
+                                <InboxIcon sx={{ marginRight: '20px' }} />
+                                <MyTypography>Formulation of the problem</MyTypography>
+                            </ListItemButton>
+                        </ListItem>
+                    </MyLink>
+                    <MyLink href='/TestingLab3/Graph'>
+                        <ListItem>
+                            <ListItemButton>
+                                <MailIcon sx={{ marginRight: '20px' }} />
+                                <MyTypography>Graph control program</MyTypography>
+                            </ListItemButton>
+                        </ListItem>
+                    </MyLink>
+                    <MyLink href='/TestingLab3/Testing'>
+                        <ListItem>
+                            <ListItemButton>
+                                <InboxIcon sx={{ marginRight: '20px' }} />
+                                <MyTypography>Testing and table with test options</MyTypography>
+                            </ListItemButton>
+                        </ListItem>
+                    </MyLink>
                 </List>
                 <Divider />
                 <List>
@@ -154,7 +164,7 @@ export default function PersistentDrawerLeft() {
                         <MyTypography>
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    {index % 2 === 0 ? <MailIcon /> : <InboxIcon />}
                                     <ListItemText sx={{ marginLeft: "20px" }} primary={text} />
                             </ListItemButton>
                             </ListItem>
