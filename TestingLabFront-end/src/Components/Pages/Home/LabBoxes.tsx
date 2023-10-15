@@ -8,7 +8,7 @@ import MyButton from '../../Common/MyButton'
 import '../Home/LabBoxes.css'; // Импортируйте стили
 
 const LabsBoxes: React.FC = () => {
-    const [popularProducts, setPopularProducts] = useState<{
+    const [labBoxes, setLabBoxes] = useState<{
         descriptionLabsId: number; labDescription: string;
         labName: number; imageUrl: string
     }[]>([]);
@@ -31,7 +31,7 @@ const LabsBoxes: React.FC = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get('https://localhost:7275/api/home/popular-products');
-                setPopularProducts(response.data);
+                setLabBoxes(response.data);
             } catch (error) {
                 console.error('Error fetching popular products:', error);
             }
@@ -47,7 +47,7 @@ const LabsBoxes: React.FC = () => {
                 paddingTop: '13px',
                 paddingBottom: '27px'
                 }}>
-                {popularProducts.map((labBox) => (
+                {labBoxes.map((labBox) => (
                     <Grid item xs={2} md={2} key={labBox.descriptionLabsId}>
                         <Box
                             onMouseEnter={() => handleMouseEnter(labBox.descriptionLabsId)}

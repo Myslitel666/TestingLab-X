@@ -36,7 +36,6 @@ const Logo = () => {
     //Смена изображения
     const toggleImages = () => {
         setIsFirstImage(prevState => !prevState);
-        //setIsClicked(false);
     };
 
     return (

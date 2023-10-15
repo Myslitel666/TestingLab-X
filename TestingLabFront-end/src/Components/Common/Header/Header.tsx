@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { useState } from 'react';
 
 //MUI Import
 import { styled, useTheme } from '@mui/material/styles';
@@ -23,6 +23,8 @@ import Link from '@mui/material/Link';
 
 //MyComponents Import
 import HeaderContent from '../Header/HeaderContent';
+import MyLink from '../../Common/MyLink';
+import MyTypography from '../MyTypography';
 
 const drawerWidth = 240;
 
@@ -88,9 +90,9 @@ export default function PersistentDrawerLeft() {
     };
 
     const links = [
-        <Link underline="none" color = "white" href='/TestingLab3/Problem'>Formulation of the problem</Link>,
-        <Link underline="none" color="white" href='/TestingLab3/Graph'>Graph control program</Link>,
-        <Link underline="none" color="white" href='/TestingLab3/Testing'>Testing and table with test options</Link>
+        <MyLink underline="none" color = "white" href='/TestingLab3/Problem'>Formulation of the problem</MyLink>,
+        <MyLink underline="none" color="white" href='/TestingLab3/Graph'>Graph control program</MyLink>,
+        <MyLink underline="none" color="white" href='/TestingLab3/Testing'>Testing and table with test options</MyLink>
     ];
 
     return (
@@ -132,28 +134,31 @@ export default function PersistentDrawerLeft() {
                 <Divider />
                 <List>
                     {links.map((link, index) => (
-                        <ListItem key={index}>
-                            {index % 2 === 0 ? (
-                                <ListItemIcon>
-                                    <InboxIcon />
-                                </ListItemIcon>
-                            ) : <ListItemIcon><MailIcon /></ListItemIcon>}
-                            <ListItemText primary={link} />
-                        </ListItem>
+                        <MyTypography>
+                            <ListItem key={index}>
+                                <ListItemButton>
+                                    {index % 2 === 0 ? (
+                                            <InboxIcon />
+                                    ) : <MailIcon />}
+
+                                    <ListItemText sx={{ marginLeft: "20px" }} primary={link} />
+                                </ListItemButton>
+                            </ListItem>
+                        </MyTypography>
                     ))}
 
                 </List>
                 <Divider />
                 <List>
                     {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                        <MyTypography>
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
                                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                                    <ListItemText sx={{ marginLeft: "20px" }} primary={text} />
                             </ListItemButton>
-                        </ListItem>
+                            </ListItem>
+                        </MyTypography>
                     ))}
                 </List>
             </Drawer>

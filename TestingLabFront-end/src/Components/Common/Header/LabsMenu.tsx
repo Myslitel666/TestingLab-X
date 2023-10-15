@@ -8,6 +8,8 @@ import BatteryCharging60Icon from '@mui/icons-material/BatteryCharging60';
 import BatteryCharging80Icon from '@mui/icons-material/BatteryCharging80';
 import BatteryCharging90Icon from '@mui/icons-material/BatteryCharging90';
 import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
+import { useTheme } from '@mui/material/styles';
+import { Typography } from '@mui/material';
 
 import ArchiveIcon from '@mui/icons-material/Archive';
 
@@ -28,7 +30,21 @@ const renderIcon = (iconName: string) => {
 };
 
 const LabsMenu: React.FC = () => {
+    const theme = useTheme();
+    const PrimaryMainColor = theme.palette.primary.main;
+    const PrimaryDarkColor = theme.palette.text.primary;
+
     const [data, setData] = useState<{ labName: string; labIcon: string }[]>([]);
+
+    const [isHovered, setIsHovered] = useState<number | null>(null);
+
+    const handleMouseEnter = (labId:number) => {
+        setIsHovered(labId);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(null);
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -51,8 +67,16 @@ const LabsMenu: React.FC = () => {
         <div className="category-menu">
             {data.map((labObject, index) => (
                 <div key={index} className="category-item">
-                    {renderIcon(labObject.labIcon) || <div>No Icon</div>}
-                    {labObject.labName}
+                    <Typography
+                        onMouseEnter={() => handleMouseEnter(index)}
+                        onMouseLeave={handleMouseLeave}
+                        sx={{
+                            color: isHovered === index ? PrimaryMainColor : PrimaryDarkColor,
+                            transition: 'color 1s ease'
+                        }}>
+                        {renderIcon(labObject.labIcon) || <div>No Icon</div>}
+                        {labObject.labName}
+                    </Typography>
                 </div>
             ))}
         </div>
