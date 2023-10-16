@@ -15,18 +15,76 @@ const Problem: React.FC = () => {
             }}>
                 <h2>Основная задача</h2>
             </Typography>
-            <Typography>
-                <span style={{
-                    color: `${primaryMainColor}`,
-                    marginRight: '10px',
-                    marginLeft: '20px'
-                }}>
-                    Цель:
-                </span>
-                <span>
-                    закрепить теоретические знания и получить практические навыки
-                    в разработке программы тестирования методом базового пути.
-                </span>
+
+            <Typography sx={{ marginLeft: '30px', marginRight: '30px' }}>
+                <Typography>
+                    <span style={{
+                        color: `${primaryMainColor}`,
+                        marginRight: '10px',
+                        marginLeft: '20px',
+                    }}>
+                        Цель:
+                    </span>
+                    <span>
+                        закрепить теоретические знания и получить практические навыки
+                        в разработке программы тестирования методом базового пути.
+                        </span>
+                </Typography>
+                <Typography sx={{ marginTop: '10px' } }>
+                    <span style={{
+                        color: `${primaryMainColor}`,
+                        marginRight: '10px',
+                        marginLeft: '20px',
+                    }}>
+                        Используемые приёмы и технологии:
+                    </span>
+                    <span>
+                        платформа разработки сайтов и web-приложений ASP.NET Core. 
+                        Архитектурный pattern разработки программного обеспечения
+                        MVC (Model-View-Controller), стиль для построения
+                        распределенных систем Rest, библиотека JavaScript для
+                        создания пользовательских интерфейсов React. Среда 
+                        разработки Visual Studio Community 2022.
+                    </span>
+                </Typography>
+                <Typography sx={{ marginTop: '10px' }}>
+                    <span style={{
+                        color: `${primaryMainColor}`,
+                        marginRight: '10px',
+                        marginLeft: '20px',
+                    }}>
+                        Ключевые термины:
+                    </span>
+                    <span>
+                        структурное тестирование, управляющий потоковый граф
+                        программы, цикломатическая сложность, путь, ветвь, узел,
+                        дуга, операторный узел, предикатный узел, независимый путь,
+                        регион.
+                    </span>
+                </Typography>
+            </Typography>
+
+            <Typography sx={{
+                'text-align': 'center',
+                color: `${primaryMainColor}`
+            }}>
+                <h2>Вариант n</h2>
+            </Typography>
+
+            <Typography sx={{
+                'text-align': 'center',
+            }}>
+            <img
+                src='/images/expressions/FormulaTesting.png'
+                alt='Formula'
+                style={{
+                    maxWidth: '100%',
+                    maxHeight: '200px',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                    marginTop: '5px'
+                }}
+            />
             </Typography>
         </>
     );
