@@ -2,9 +2,9 @@
 
 import { Paper, Typography, Grid, Box, } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import '../Home/LabBoxes.css'
 
 import MyBox from '../../Common/MyBox';
+import '../TestingLab3/Graph.css'
 
 const Graph: React.FC = () => {
     const theme = useTheme();
@@ -14,26 +14,19 @@ const Graph: React.FC = () => {
         <>
             <Typography sx={{
                 'text-align': 'center',
-                color: `${PrimaryMainColor}`
+                color: `${PrimaryMainColor}`,
+                transition: 'color 1s ease'
             }}>
                 <h2>Control Flow Graph of the Program</h2>
             </Typography>
-            <Grid container spacing={2} sx={{
+            <Grid container spacing={6} sx={{
                 paddingTop: '1%',
                 paddingBottom: '1%',
-                paddingLeft: '1%', 
-                paddingRight: '1%', 
+                paddingLeft: '3%', 
+                paddingRight: '3%', 
             }}>
                 <Grid item xs={6} md={6}>
-                    <MyBox
-                        sx={{
-                            border: `1px solid ${PrimaryMainColor}`,
-                            borderRadius: '10px',
-                            padding: '10px',
-                            textAlign: 'center',
-                            cursor: 'pointer',
-                        }}
-                    >
+                    <MyBox className="product-box">
                         <Typography sx={{
                             'text-align': 'center',
                         }}>
@@ -52,30 +45,37 @@ const Graph: React.FC = () => {
                     </MyBox>
                 </Grid>
                 <Grid item xs={6} md={6}>
-                    <MyBox
-                        sx={{
-                            border: `1px solid ${PrimaryMainColor}`,
-                            borderRadius: '10px',
-                            padding: '10px',
-                            textAlign: 'center',
-                            cursor: 'pointer',
-                        }}
-                    >
+                    <MyBox className="product-box">
                         <Typography sx={{
                             'text-align': 'center',
                         }}>
-                            <img
-                                src='/images/Graph.png'
-                                alt='Formula'
-                                style={{
-                                    maxWidth: '57%',
-                                    maxHeight: '57%',
-                                    objectFit: 'cover',
-                                    borderRadius: '8px',
-                                    marginTop: '5px',
-                                }}
-                            />
+                            Цикломатическая сложность V(G) - число независимых
+                            линейных путей в базовом множестве, которое
+                            определяется одним из способов:
                         </Typography>
+                        <Typography sx={{
+                            'text-align': 'center',
+                            color: `${PrimaryMainColor}`,
+                            transition: 'color 1s ease'
+                        }}>
+                            V(G) = R1 + R2
+                        </Typography>
+                        <Typography sx={{
+                            'text-align': 'center',
+                            color: `${PrimaryMainColor}`,
+                            transition: 'color 1s ease'
+                        }}>
+                            V(G) = E - V + 2
+                        </Typography>
+                        <Typography sx={{
+                            'text-align': 'center',
+                            color: `${PrimaryMainColor}`,
+                            transition: 'color 1s ease'
+                        }}>
+                            V(G) = P + 1
+                        </Typography>
+                        <img style={{height: '280px'} }
+                        />
                     </MyBox>
                 </Grid>
             </Grid>

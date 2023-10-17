@@ -1,13 +1,17 @@
 ﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Paper, Typography, Grid, Box, } from '@mui/material';
-import { Button } from '@mui/material';
+
+//MUI Import
+import { Paper, Typography, Grid } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
+//MyComponents Import
 import MyButton from '../../Common/MyButton'
 import MyBox from '../../Common/MyBox';
 
-import '../Home/LabBoxes.css'; // Импортируйте стили
+//CSS Import
+import '../TestingLab3/Graph.css';
+
 const LabsBoxes: React.FC = () => {
     const [labBoxes, setLabBoxes] = useState<{
         descriptionLabsId: number; labDescription: string;
@@ -38,9 +42,7 @@ const LabsBoxes: React.FC = () => {
                 }}>
                 {labBoxes.map((labBox) => (
                     <Grid item xs={2} md={2} key={labBox.descriptionLabsId}>
-                        <MyBox
-                            className="product-box"
-                        >
+                        <MyBox className="product-box">
                             {/* Фотография товара */}
                             <img
                                 src={labBox.imageUrl}
