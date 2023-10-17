@@ -1,37 +1,81 @@
 ﻿import React from 'react';
 
-import { Typography } from '@mui/material';
+import { Paper, Typography, Grid, Box, } from '@mui/material';
 
 import { useTheme } from '@mui/material/styles';
 
 const Graph: React.FC = () => {
     const theme = useTheme();
-    const primaryMainColor = theme.palette.primary.main;
+    const PrimaryMainColor = theme.palette.primary.main;
 
     return (
         <>
             <Typography sx={{
                 'text-align': 'center',
-                color: `${primaryMainColor}`
+                color: `${PrimaryMainColor}`
             }}>
                 <h2>Control Flow Graph of the Program</h2>
             </Typography>
-
-            <Typography sx={{
-                'text-align': 'center',
+            <Grid container spacing={2} sx={{
+                paddingTop: '1%',
+                paddingBottom: '1%',
+                paddingLeft: '1%', 
+                paddingRight: '1%', 
             }}>
-                <img
-                    src='/images/Graph.png'
-                    alt='Formula'
-                    style={{
-                        maxWidth: '40%',
-                        maxHeight: '40%',
-                        objectFit: 'cover',
-                        borderRadius: '8px',
-                        marginTop: '5px'
-                    }}
-                />
-            </Typography>
+                <Grid item xs={6} md={6}>
+                    <Box
+                        sx={{
+                            border: `1px solid ${PrimaryMainColor}`,
+                            borderRadius: '10px',
+                            padding: '10px',
+                            cursor: 'pointer',
+                        }}
+                    >
+                        <Typography sx={{
+                            'text-align': 'center',
+                        }}>
+                            <img
+                                src='/images/Graph.png'
+                                alt='Formula'
+                                style={{
+                                    maxWidth: '57%',
+                                    maxHeight: '57%',
+                                    objectFit: 'cover',
+                                    borderRadius: '8px',
+                                    marginTop: '5px',
+                                }}
+                            />
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                    <Box
+                        sx={{
+                            border: `1px solid ${PrimaryMainColor}`,
+                            borderRadius: '10px',
+                            padding: '10px',
+                            cursor: 'pointer',
+                        }}
+                    >
+                        <Typography sx={{
+                            'text-align': 'center',
+                        }}>
+                            <img
+                                src='/images/Graph.png'
+                                alt='Formula'
+                                style={{
+                                    maxWidth: '57%',
+                                    maxHeight: '57%',
+                                    objectFit: 'cover',
+                                    borderRadius: '8px',
+                                    marginTop: '5px',
+                                }}
+                            />
+                        </Typography>
+                    </Box>
+                </Grid>
+            </Grid>
+
         </>
     );
 };
