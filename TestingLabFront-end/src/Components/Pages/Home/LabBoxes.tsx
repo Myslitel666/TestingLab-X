@@ -3,29 +3,18 @@ import axios from 'axios';
 import { Paper, Typography, Grid, Box, } from '@mui/material';
 import { Button } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+
 import MyButton from '../../Common/MyButton'
+import MyBox from '../../Common/MyBox';
 
 import '../Home/LabBoxes.css'; // Импортируйте стили
-
 const LabsBoxes: React.FC = () => {
     const [labBoxes, setLabBoxes] = useState<{
         descriptionLabsId: number; labDescription: string;
         labName: number; imageUrl: string
     }[]>([]);
 
-    const [hoveredLabBox, setHoveredLabBox] = useState<number | null>(null);
-
-    const handleMouseEnter = (descriptionLabsId: number) => {
-        setHoveredLabBox(descriptionLabsId);
-    };
-
-    const handleMouseLeave = () => {
-        setHoveredLabBox(null);
-    };
-
     const theme = useTheme();
-    const PrimaryMainColor = theme.palette.primary.main;
-    const PrimaryDarkColor = theme.palette.primary.dark;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -49,16 +38,7 @@ const LabsBoxes: React.FC = () => {
                 }}>
                 {labBoxes.map((labBox) => (
                     <Grid item xs={2} md={2} key={labBox.descriptionLabsId}>
-                        <Box
-                            onMouseEnter={() => handleMouseEnter(labBox.descriptionLabsId)}
-                            onMouseLeave={handleMouseLeave}
-                            sx={{
-                                border: `1px solid ${hoveredLabBox === labBox.descriptionLabsId ? PrimaryDarkColor : PrimaryMainColor}`,
-                                borderRadius: '10px',
-                                padding: '10px',
-                                textAlign: 'center',
-                                cursor: 'pointer',
-                            }}
+                        <MyBox
                             className="product-box"
                         >
                             {/* Фотография товара */}
@@ -96,7 +76,7 @@ const LabsBoxes: React.FC = () => {
                                 sx={{ marginBottom: '5px', }}>
                                 View Lab Page
                             </MyButton>
-                        </Box>
+                        </MyBox>
                     </Grid>
                 ))}
             </Grid>

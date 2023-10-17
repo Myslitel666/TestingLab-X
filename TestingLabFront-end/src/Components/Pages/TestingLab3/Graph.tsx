@@ -1,8 +1,10 @@
 ﻿import React from 'react';
 
 import { Paper, Typography, Grid, Box, } from '@mui/material';
-
 import { useTheme } from '@mui/material/styles';
+import '../Home/LabBoxes.css'
+
+import MyBox from '../../Common/MyBox';
 
 const Graph: React.FC = () => {
     const theme = useTheme();
@@ -23,11 +25,12 @@ const Graph: React.FC = () => {
                 paddingRight: '1%', 
             }}>
                 <Grid item xs={6} md={6}>
-                    <Box
+                    <MyBox
                         sx={{
                             border: `1px solid ${PrimaryMainColor}`,
                             borderRadius: '10px',
                             padding: '10px',
+                            textAlign: 'center',
                             cursor: 'pointer',
                         }}
                     >
@@ -46,14 +49,15 @@ const Graph: React.FC = () => {
                                 }}
                             />
                         </Typography>
-                    </Box>
+                    </MyBox>
                 </Grid>
                 <Grid item xs={6} md={6}>
-                    <Box
+                    <MyBox
                         sx={{
                             border: `1px solid ${PrimaryMainColor}`,
                             borderRadius: '10px',
                             padding: '10px',
+                            textAlign: 'center',
                             cursor: 'pointer',
                         }}
                     >
@@ -72,7 +76,7 @@ const Graph: React.FC = () => {
                                 }}
                             />
                         </Typography>
-                    </Box>
+                    </MyBox>
                 </Grid>
             </Grid>
 

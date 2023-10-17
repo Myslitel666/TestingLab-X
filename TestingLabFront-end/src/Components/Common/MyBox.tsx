@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Link, { LinkProps } from '@mui/material/Link';
+import Box, { BoxProps } from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 
-interface MyButtonProps extends LinkProps {
+interface MyButtonProps extends BoxProps {
     // Дополнительные свойства, если необходимо
 }
 
-const MyButton: React.FC<MyButtonProps> = (props) => {
+const MyBox: React.FC<MyButtonProps> = (props) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -19,22 +19,21 @@ const MyButton: React.FC<MyButtonProps> = (props) => {
 
     const theme = useTheme();
     const PrimaryMainColor = theme.palette.primary.main;
-    const PrimaryDarkColor = theme.palette.text.primary;
+    const PrimaryDarkColor = theme.palette.primary.dark;
 
     return (
-        <Link
+        <Box
             {...props}
-            color={theme.palette.primary.main}
-            onMouseEnter={handleMouseEnter}
+            onMouseEnter={() => handleMouseEnter()}
             onMouseLeave={handleMouseLeave}
-            underline="none"
             sx={{
+                border: `1px solid ${isHovered ? PrimaryDarkColor : PrimaryMainColor}`,
+                borderRadius: '10px',
+                padding: '10px',
                 cursor: 'pointer',
-                color: isHovered ? `${PrimaryMainColor}` : `${PrimaryDarkColor}`,
-                transition: 'color 1s ease'
             }}
         />
     );
 };
 
-export default MyButton;
+export default MyBox;
