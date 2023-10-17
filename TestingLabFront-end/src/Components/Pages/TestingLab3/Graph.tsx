@@ -14,7 +14,7 @@ const Graph: React.FC = () => {
                 'text-align': 'center',
                 color: `${primaryMainColor}`
             }}>
-                <h2>Управляющий Потоквый Граф</h2>
+                <h2>Control Flow Graph of the Program</h2>
             </Typography>
 
             <Typography sx={{

@@ -90,9 +90,9 @@ export default function PersistentDrawerLeft() {
     };
 
     const links = [
-        <MyLink underline="none" color = "white" href='/TestingLab3/Problem'>Formulation of the problem</MyLink>,
-        <MyLink underline="none" color="white" href='/TestingLab3/Graph'>Graph control program</MyLink>,
-        <MyLink underline="none" color="white" href='/TestingLab3/Testing'>Testing and table with test options</MyLink>
+        <MyLink underline="none" color = "white" href='/TestingLab3/Problem'></MyLink>,
+        <MyLink underline="none" color="white" href='/TestingLab3/Graph'></MyLink>,
+        <MyLink underline="none" color="white" href='/TestingLab3/Testing'></MyLink>
     ];
 
     return (
@@ -145,7 +145,7 @@ export default function PersistentDrawerLeft() {
                         <ListItem>
                             <ListItemButton>
                                 <MailIcon sx={{ marginRight: '20px' }} />
-                                <MyTypography>Graph control program</MyTypography>
+                                <MyTypography>Control Flow Graph of the Program</MyTypography>
                             </ListItemButton>
                         </ListItem>
                     </MyLink>
