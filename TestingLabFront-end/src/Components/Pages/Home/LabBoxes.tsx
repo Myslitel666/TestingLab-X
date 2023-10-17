@@ -10,7 +10,7 @@ import MyButton from '../../Common/MyButton'
 import MyBox from '../../Common/MyBox';
 
 //CSS Import
-import '../TestingLab3/Graph.css';
+import '../Home/LabBoxes.css';
 
 const LabsBoxes: React.FC = () => {
     const [labBoxes, setLabBoxes] = useState<{
