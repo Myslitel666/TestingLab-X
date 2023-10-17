@@ -5,13 +5,14 @@ import { useTheme } from '@mui/material/styles';
 
 const Problem: React.FC = () => {
     const theme = useTheme();
-    const primaryMainColor = theme.palette.primary.main;
+    const PrimaryMainColor = theme.palette.primary.main;
 
     return (
         <>
             <Typography sx={{
                 'text-align': 'center',
-                color: `${primaryMainColor}`
+                color: `${PrimaryMainColor}`,
+                transition: 'color 1s ease'
             }}>
                 <h2>Основная задача</h2>
             </Typography>
@@ -19,9 +20,10 @@ const Problem: React.FC = () => {
             <Typography sx={{ marginLeft: '30px', marginRight: '30px' }}>
                 <Typography>
                     <span style={{
-                        color: `${primaryMainColor}`,
+                        color: `${PrimaryMainColor}`,
                         marginRight: '10px',
                         marginLeft: '20px',
+                        transition: 'color 1s ease'
                     }}>
                         Цель:
                     </span>
@@ -32,9 +34,10 @@ const Problem: React.FC = () => {
                 </Typography>
                 <Typography sx={{ marginTop: '10px' } }>
                     <span style={{
-                        color: `${primaryMainColor}`,
+                        color: `${PrimaryMainColor}`,
                         marginRight: '10px',
                         marginLeft: '20px',
+                        transition: 'color 1s ease'
                     }}>
                         Используемые приёмы и технологии:
                     </span>
@@ -49,9 +52,10 @@ const Problem: React.FC = () => {
                 </Typography>
                 <Typography sx={{ marginTop: '10px' }}>
                     <span style={{
-                        color: `${primaryMainColor}`,
+                        color: `${PrimaryMainColor}`,
                         marginRight: '10px',
                         marginLeft: '20px',
+                        transition: 'color 1s ease'
                     }}>
                         Ключевые термины:
                     </span>
@@ -66,7 +70,8 @@ const Problem: React.FC = () => {
 
             <Typography sx={{
                 'text-align': 'center',
-                color: `${primaryMainColor}`
+                color: `${PrimaryMainColor}`,
+                transition: 'color 1s ease'
             }}>
                 <h2>Вариант n</h2>
             </Typography>

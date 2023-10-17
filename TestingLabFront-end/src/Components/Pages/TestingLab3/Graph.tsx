@@ -28,7 +28,7 @@ const Graph: React.FC = () => {
                 <Grid item xs={6} md={6}>
                     <MyBox className="product-box">
                         <Typography sx={{
-                            'text-align': 'center',
+
                         }}>
                             <img
                                 src='/images/Graph.png'
@@ -45,42 +45,55 @@ const Graph: React.FC = () => {
                     </MyBox>
                 </Grid>
                 <Grid item xs={6} md={6}>
-                    <MyBox className="product-box">
-                        <Typography>
-                            Цикломатическая сложность V(G) - число независимых
-                            линейных путей в базовом множестве, которое
-                            определяется одним из способов:
+                    <MyBox className="product-box2">
+                        <Typography sx={{ marginLeft: '10px' }}>
+                            <Typography sx={{ marginTop: '10px' }}>
+                                <span style={{
+                                    marginLeft: '20px',
+                                    color: `${PrimaryMainColor}`,
+                                    transition: 'color 1s ease'
+                                }}>Цикломатическая сложность V(G) </span>
+                                - число независиых линейных путей в базовом
+                                множестве, которое определяется одним из
+                                способов:
+                            </Typography>
+                            <Typography sx={{
+                                marginTop: '10px',
+                                color: `${PrimaryMainColor}`,
+                                transition: 'color 1s ease',
+                                'text-align': 'center',
+                            }}>
+                                V(G) = R1 + R2
+                            </Typography>
+                            <Typography sx={{
+                                marginTop: '10px',
+                                color: `${PrimaryMainColor}`,
+                                transition: 'color 1s ease',
+                                'text-align': 'center',
+                            }}>
+                                V(G) = E - V + 2
+                            </Typography>
+                            <Typography sx={{
+                                marginTop: '10px',
+                                color: `${PrimaryMainColor}`,
+                                transition: 'color 1s ease',
+                                'text-align': 'center',
+                            }}>
+                                V(G) = P + 1
+                            </Typography>
+                            <Typography sx={{ marginTop: '10px' }} >
+                                <span style={{
+                                    marginLeft: '20px',
+                                    color: `${PrimaryMainColor}`,
+                                    transition: 'color 1s ease'
+                                }}>Математически цикломатическая сложность </span>
+                                структурированной программы определяется с помощью
+                                ориентированного графа, узлами которого являются
+                                блоки программы, соединенные рёбрами, если
+                                управление может переходить с одного блока на другой.
+                            </Typography>
+                            <img style={{ height: '200px' }}/>
                         </Typography>
-                        <Typography sx={{
-                            'text-align': 'center',
-                            color: `${PrimaryMainColor}`,
-                            transition: 'color 1s ease'
-                        }}>
-                            V(G) = R1 + R2
-                        </Typography>
-                        <Typography sx={{
-                            'text-align': 'center',
-                            color: `${PrimaryMainColor}`,
-                            transition: 'color 1s ease'
-                        }}>
-                            V(G) = E - V + 2
-                        </Typography>
-                        <Typography sx={{
-                            'text-align': 'center',
-                            color: `${PrimaryMainColor}`,
-                            transition: 'color 1s ease'
-                        }}>
-                            V(G) = P + 1
-                        </Typography>
-                        <Typography>
-                            Математически цикломатическая сложность структурированной
-                            программы определяется с помощью ориентированного графа,
-                            узлами которого являются блоки программы, соединенные
-                            рёбрами, если управление может переходить с одного блока
-                            на другой.
-                        </Typography>
-                        <img style={{ height: '200px' }}
-                        />
                     </MyBox>
                 </Grid>
             </Grid>
