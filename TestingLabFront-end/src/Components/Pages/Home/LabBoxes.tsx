@@ -75,7 +75,7 @@ const LabsBoxes: React.FC = () => {
                             <MyButton
                                 variant="contained"
                                 color="primary"
-                                sx={{ marginBottom: '5px', }}>
+                                sx={{ marginBottom: '5px', justifyContent: 'center' }}>
                                 View Lab Page
                             </MyButton>
                         </MyBox>

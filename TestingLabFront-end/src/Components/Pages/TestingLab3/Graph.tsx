@@ -1,14 +1,34 @@
-﻿import React from 'react';
+﻿import React, { useState } from 'react';
 
 import { Paper, Typography, Grid, Box, } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import MyButton from '../../Common/MyButton';
 
 import MyBox from '../../Common/MyBox';
 import '../TestingLab3/Graph.css'
-
+ 
 const Graph: React.FC = () => {
     const theme = useTheme();
     const PrimaryMainColor = theme.palette.primary.main;
+
+    // Состояние текста
+    const [V1, setV1] = useState(`V(G) = R1 + R2`);
+    const [V2, setV2] = useState(`V(G) = E - V + 2`);
+    const [V3, setV3] = useState(`V(G) = P + 1`);
+
+    // Функция для обновления текста по нажатию кнопки
+    const calculateButtonClick = () => {
+        setV1(`V(G) = R1 + R2 = ` + `1 + 4 = ` + `${1 + 4}`);
+        setV2(`V(G) = E - V + 2 = ` + `14 - 11 + 2 = ` + `${14 - 11 + 2}`);
+        setV3(`V(G) = P + 1 = ` + `4 + 1 = ` + `${4 + 1}`);
+    };
+
+    // Функция для обновления текста по нажатию кнопки
+    const clearButtonClick = () => {
+        setV1(`V(G) = R1 + R2`);
+        setV2(`V(G) = E - V + 2`);
+        setV3(`V(G) = P + 1`);
+    };
 
     return (
         <>
@@ -24,6 +44,7 @@ const Graph: React.FC = () => {
                 paddingBottom: '1%',
                 paddingLeft: '3%', 
                 paddingRight: '3%', 
+                marginBottom: '25px'
             }}>
                 <Grid item xs={6} md={6}>
                     <MyBox className="product-box">
@@ -63,7 +84,7 @@ const Graph: React.FC = () => {
                                 transition: 'color 1s ease',
                                 'text-align': 'center',
                             }}>
-                                V(G) = R1 + R2
+                                {V1}
                             </Typography>
                             <Typography sx={{
                                 marginTop: '10px',
@@ -71,7 +92,7 @@ const Graph: React.FC = () => {
                                 transition: 'color 1s ease',
                                 'text-align': 'center',
                             }}>
-                                V(G) = E - V + 2
+                                {V2}
                             </Typography>
                             <Typography sx={{
                                 marginTop: '10px',
@@ -79,7 +100,7 @@ const Graph: React.FC = () => {
                                 transition: 'color 1s ease',
                                 'text-align': 'center',
                             }}>
-                                V(G) = P + 1
+                                {V3}
                             </Typography>
                             <Typography sx={{ marginTop: '10px' }} >
                                 <span style={{
@@ -92,12 +113,36 @@ const Graph: React.FC = () => {
                                 блоки программы, соединенные рёбрами, если
                                 управление может переходить с одного блока на другой.
                             </Typography>
-                            <img style={{ height: '200px' }}/>
+                            <Typography sx={{ marginTop: '10px' }} >
+                                <span style={{
+                                    marginLeft: '20px',
+                                    color: `${PrimaryMainColor}`,
+                                    transition: 'color 1s ease'
+                                }}>Управляющий потоковый граф </span>
+                                - это граф, узлы которого представляют базовые блоки кода,
+                                а ребра представляют переходы между ними.
+                            </Typography>
+                            <img style={{ height: '78px' }}/>
                         </Typography>
                     </MyBox>
                 </Grid>
             </Grid>
-
+            <Typography sx={{ 'text-align': 'center' }} >
+                <MyButton variant="contained"
+                    color="primary"
+                    onClick={calculateButtonClick}
+                    style={{ marginRight: '25px', marginLeft: '10px' }}
+                >
+                    Calculate
+                </MyButton>
+                <MyButton variant="contained"
+                    color="primary"
+                    onClick={clearButtonClick}
+                    style={{ width: '115px' }}
+                >
+                    Clear
+                </MyButton>
+            </Typography>
         </>
     );
 };
