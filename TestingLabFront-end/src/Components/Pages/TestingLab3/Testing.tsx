@@ -20,19 +20,19 @@ const Testing: React.FC = () => {
 
     const [rows, setRows] = useState([]);
 
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await fetch('https://localhost:7275/api/testingLab3');
-                const data = await response.json();
-                setRows(data); // Устанавливаем полученные данные в состояние rows
-            } catch (error) {
-                console.error('Ошибка при загрузке данных:', error);
-            }
+    async function fetchData() {
+        try {
+            const response = await fetch('https://localhost:7275/api/testingLab3');
+            const data = await response.json();
+            setRows(data); // Устанавливаем полученные данные в состояние rows
+        } catch (error) {
+            console.error('Ошибка при загрузке данных:', error);
         }
+    };
 
-        fetchData(); // Вызываем функцию загрузки данных при монтировании компонента
-    }, []); // Пустой массив зависимостей означает, что эффект будет запущен только один раз при монтировании
+    const handleCalculateClick = () => {
+        fetchData(); // Вызываем функцию загрузки данных при нажатии на кнопку
+    };
 
     return (
         <>
@@ -69,6 +69,7 @@ const Testing: React.FC = () => {
             <MyButton variant="contained"
                 color="primary"
                 style={{ marginTop: '25px', marginLeft: '10px' }}
+                onClick={handleCalculateClick}
             >
                 Calculate
             </MyButton>
