@@ -43,7 +43,6 @@ const LabsBoxes: React.FC = () => {
                 {labBoxes.map((labBox) => (
                     <Grid item xs={2} md={2} key={labBox.descriptionLabsId}>
                         <MyBox className="product-box">
-                            {/* Фотография товара */}
                             <img
                                 src={labBox.imageUrl}
                                 alt={labBox.labDescription}
@@ -55,7 +54,6 @@ const LabsBoxes: React.FC = () => {
                                     marginTop: '5px'
                                 }}
                             />
-                            {/* Информация о товаре */}
                             <Typography
                                 fontWeight="bold"
                                 variant="h5"

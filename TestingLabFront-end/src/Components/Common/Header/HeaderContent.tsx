@@ -21,7 +21,7 @@ export default function HeaderContent() {
             <Link underline="none" href = "/">
                 <ShopName />
             </Link>
-            <div style={{ flexGrow: 1, marginRight: '150px' }}></div>
+            <div style={{ flexGrow: 1, marginRight: '130px' }}></div>
             <div style={{
                 display: 'flex', alignItems: 'center',
                 marginRight: '10px'
@@ -38,7 +38,7 @@ export default function HeaderContent() {
                     variant="contained"
                     color="primary"
                     startIcon={<SearchIcon />}
-                    style={{ marginRight: '180px' }}
+                    style={{ marginRight: '200px' }}
                 >
                     Search
                 </MyButton>
@@ -53,6 +53,7 @@ export default function HeaderContent() {
                 }}>
                 Sign in
             </MyButton>
+
             <MyButton variant="outlined" color="primary"
                 style={{
                     borderWidth: '2px',
@@ -61,7 +62,7 @@ export default function HeaderContent() {
                 }}
             >
                 Sign up
-            </MyButton>
+                </MyButton>
         </div>
 
     );
