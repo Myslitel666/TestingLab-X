@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Grid, TextField, Typography, Box } from '@mui/material';
 import MyButton from '../../Common/MyButton';
 import { DataGrid } from '@mui/x-data-grid';
@@ -18,12 +18,21 @@ const Testing: React.FC = () => {
         { field: 'testResult', headerName: 'Test Result', width: 130 },
     ];
 
-    const rows = [
-        { id: 1, testNumber: 1, expectedResult: 5.5, actualResult: 5.5, testResult: 'Passed' },
-        { id: 2, testNumber: 2, expectedResult: 6.6, actualResult: 3, testResult: 'Failed' },
-        { id: 3, testNumber: 3, expectedResult: 3.38, actualResult: 2, testResult: 'Failed' },
+    const [rows, setRows] = useState([]);
 
-    ];
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch('https://localhost:7275/api/testingLab3');
+                const data = await response.json();
+                setRows(data); // Устанавливаем полученные данные в состояние rows
+            } catch (error) {
+                console.error('Ошибка при загрузке данных:', error);
+            }
+        }
+
+        fetchData(); // Вызываем функцию загрузки данных при монтировании компонента
+    }, []); // Пустой массив зависимостей означает, что эффект будет запущен только один раз при монтировании
 
     return (
         <>
