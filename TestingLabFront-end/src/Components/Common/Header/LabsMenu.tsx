@@ -49,8 +49,6 @@ const LabsMenu: React.FC = () => {
         fetchData();
     }, []);
 
-    console.log(data)
-
     return (
         <div className="category-menu">
             {data.map((labObject, index) => (

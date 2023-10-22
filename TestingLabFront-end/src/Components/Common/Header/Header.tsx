@@ -90,9 +90,9 @@ export default function PersistentDrawerLeft() {
     };
 
     const links = [
-        <MyLink underline="none" color = "white" href='/TestingLab3/Problem'></MyLink>,
-        <MyLink underline="none" color="white" href='/TestingLab3/Graph'></MyLink>,
-        <MyLink underline="none" color="white" href='/TestingLab3/Testing'></MyLink>
+        <MyLink key="problem" underline="none" color = "white" href='/TestingLab3/Problem'></MyLink>,
+        <MyLink key="graph" underline="none" color="white" href='/TestingLab3/Graph'></MyLink>,
+        <MyLink key="testing" underline="none" color="white" href='/TestingLab3/Testing'></MyLink>
     ];
 
     return (
@@ -161,14 +161,12 @@ export default function PersistentDrawerLeft() {
                 <Divider />
                 <List>
                     {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <MyTypography>
-                        <ListItem key={text} disablePadding>
+                        <ListItem key={index} disablePadding>
                             <ListItemButton>
                                     {index % 2 === 0 ? <MailIcon /> : <InboxIcon />}
                                     <ListItemText sx={{ marginLeft: "20px" }} primary={text} />
                             </ListItemButton>
                             </ListItem>
-                        </MyTypography>
                     ))}
                 </List>
             </Drawer>
