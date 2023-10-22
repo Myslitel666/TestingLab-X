@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 
-import { Paper, Typography, Grid, Box, } from '@mui/material';
+import { Typography, Grid, Box, } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import MyButton from '../../Common/MyButton';
 
@@ -32,19 +32,21 @@ const Graph: React.FC = () => {
 
     return (
         <>
-            <Typography sx={{
-                'textAlign': 'center',
+            <Typography variant="h4"
+                sx={{'textAlign': 'center',
                 color: `${PrimaryMainColor}`,
-                transition: 'color 1s ease'
+                    transition: 'color 1s ease',
+                    marginTop: '20px'
             }}>
-                <h2>Control Flow Graph of the Program</h2>
+                Control Flow Graph of the Program
             </Typography>
             <Grid container spacing={6} sx={{
                 paddingTop: '1%',
                 paddingBottom: '1%',
                 paddingLeft: '3%', 
                 paddingRight: '3%', 
-                marginBottom: '25px'
+                marginBottom: '25px',
+                marginTop: '-30px'
             }}>
                 <Grid item xs={6} md={6}>
                     <MyBox className="product-box">
@@ -67,7 +69,6 @@ const Graph: React.FC = () => {
                 </Grid>
                 <Grid item xs={6} md={6}>
                     <MyBox className="product-box2">
-                        <Typography sx={{ marginLeft: '10px' }}>
                             <Typography sx={{ marginTop: '10px' }}>
                                 <span style={{
                                     marginLeft: '20px',
@@ -82,7 +83,7 @@ const Graph: React.FC = () => {
                                 marginTop: '10px',
                                 color: `${PrimaryMainColor}`,
                                 transition: 'color 1s ease',
-                                'text-align': 'center',
+                                'textAlign': 'center',
                             }}>
                                 {V1}
                             </Typography>
@@ -90,7 +91,7 @@ const Graph: React.FC = () => {
                                 marginTop: '10px',
                                 color: `${PrimaryMainColor}`,
                                 transition: 'color 1s ease',
-                                'text-align': 'center',
+                                'textAlign': 'center',
                             }}>
                                 {V2}
                             </Typography>
@@ -98,7 +99,7 @@ const Graph: React.FC = () => {
                                 marginTop: '10px',
                                 color: `${PrimaryMainColor}`,
                                 transition: 'color 1s ease',
-                                'text-align': 'center',
+                                'textAlign': 'center',
                             }}>
                                 {V3}
                             </Typography>
@@ -123,11 +124,10 @@ const Graph: React.FC = () => {
                                 а ребра представляют переходы между ними.
                             </Typography>
                             <img style={{ height: '78px' }}/>
-                        </Typography>
                     </MyBox>
                 </Grid>
             </Grid>
-            <Typography sx={{ 'text-align': 'center' }} >
+            <Typography sx={{ 'textAlign': 'center' }} >
                 <MyButton variant="contained"
                     color="primary"
                     onClick={calculateButtonClick}
