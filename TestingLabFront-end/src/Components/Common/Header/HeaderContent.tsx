@@ -21,7 +21,7 @@ export default function HeaderContent() {
             <Link underline="none" href = "/">
                 <ShopName />
             </Link>
-            <div style={{ flexGrow: 1, marginRight: '130px' }}></div>
+            <div style={{ flexGrow: 1, marginRight: '100px' }}></div>
             <div style={{
                 display: 'flex', alignItems: 'center',
                 marginRight: '10px'

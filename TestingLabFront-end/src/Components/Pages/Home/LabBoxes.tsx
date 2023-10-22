@@ -18,12 +18,12 @@ const LabsBoxes: React.FC = () => {
         labName: number; imageUrl: string
     }[]>([]);
 
-    const theme = useTheme();
+    const apiUrl = process.env.REACT_APP_API_URL as string;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://localhost:7275/api/home/popular-products');
+                const response = await axios.get(`${apiUrl}/api/home/popular-products`);
                 setLabBoxes(response.data);
             } catch (error) {
                 console.error('Error fetching popular products:', error);

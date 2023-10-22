@@ -30,16 +30,19 @@ const renderIcon = (iconName: string) => {
 };
 
 const LabsMenu: React.FC = () => {
-    const theme = useTheme();
+
+    const apiUrl = process.env.REACT_APP_API_URL as string;
 
     const [data, setData] = useState<{ labName: string; labIcon: string }[]>([]);
 
     useEffect(() => {
+        console.log("Привет " + apiUrl);
+
         const fetchData = async () => {
             try {
                 const response = await axios.get<{
                     labName: string; labIcon: string
-                }[]>('https://localhost:7275/api/home/categories');
+                }[]>(`${apiUrl}/api/home/categories`);
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

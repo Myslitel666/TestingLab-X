@@ -20,9 +20,11 @@ const Testing: React.FC = () => {
 
     const [rows, setRows] = useState([]);
 
+    const apiUrl = process.env.REACT_APP_API_URL as string;
+
     async function fetchData() {
         try {
-            const response = await fetch('https://localhost:7275/api/testingLab3', {
+            const response = await fetch(`${apiUrl}/api/testingLab3`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

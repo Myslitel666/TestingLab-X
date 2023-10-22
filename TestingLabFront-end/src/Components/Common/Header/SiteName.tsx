@@ -26,7 +26,8 @@ const SiteName: React.FC = () => {
             sx={{
                 cursor: 'pointer',
                 color: isHovered ? `${primaryDarkColor}` : `${primaryMainColor}`,
-                transition: 'color 1s ease'
+                transition: 'color 1s ease',
+                width:'130px'
             }}
         >
             TestingLab-X

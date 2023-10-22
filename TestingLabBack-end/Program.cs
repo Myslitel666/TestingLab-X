@@ -4,6 +4,7 @@ using Microsoft.CodeAnalysis.Elfie.Serialization;
 using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
 using System.IO;
 using System.Runtime.Intrinsics.X86;
+using Microsoft.AspNetCore.Hosting;
 
 namespace TestingLab3
 {
@@ -11,14 +12,13 @@ namespace TestingLab3
     {
         public static void Main(string[] args)
         {
+            //var myAppHttpUrl = Environment.GetEnvironmentVariable("MY_APP_HTTP_URL");
+
+            //Console.WriteLine(myAppHttpUrl);
+
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            //builder.Services.AddEndpointsApiExplorer();
-            //builder.Services.AddSwaggerGen();
 
             var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -31,13 +31,6 @@ namespace TestingLab3
             });
 
             var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                //app.UseSwagger();
-                //app.UseSwaggerUI();
-            }
 
             app.UseHttpsRedirection();
 
