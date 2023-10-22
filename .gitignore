@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /WebShopFront-end/package.json
 /WebShopFront-end/package-lock.json
+/TestingLabFront-end/package-lock.json
