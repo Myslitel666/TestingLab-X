@@ -13,21 +13,44 @@ namespace TestingLab3.Controllers
         public double ActualResult { get; set; }
         public string TestResult { get; set; }
     }
+
+    public class CalculationRequest
+    {
+        public string X0 { get; set; }
+        public string Xk { get; set; }
+        public string Step { get; set; }
+        public string TestCases { get; set; }
+    }
+
     [ApiController]
     [Route("api/testingLab3")]
     public class WhiteBoxTestingController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult GetTestData()
+        [HttpPost]
+        public IActionResult Calculate([FromBody] CalculationRequest request)
         {
-            var rows = new[]
+            try
             {
+                Console.WriteLine($"X0: {request.X0}");
+                Console.WriteLine($"Xk: {request.Xk}");
+                Console.WriteLine($"Step: {request.Step}");
+                Console.WriteLine($"TestCases: {request.TestCases}");
+
+                var rows = new[]
+                {
                 new TestingResult { Id = 1, TestNumber = 1, ExpectedResult = 5.5, ActualResult = 5.5, TestResult = "Passed" },
                 new TestingResult { Id = 2, TestNumber = 2, ExpectedResult = 6.6, ActualResult = 3, TestResult = "Failed" },
                 new TestingResult { Id = 3, TestNumber = 3, ExpectedResult = 3.38, ActualResult = 2, TestResult = "Failed" }
             };
 
-            return Ok(rows);
+                return Ok(rows);
+            }
+            catch (Exception ex)
+            {
+                // Логируем ошибки
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, "Internal server error.");
+            }
         }
     }
 }
