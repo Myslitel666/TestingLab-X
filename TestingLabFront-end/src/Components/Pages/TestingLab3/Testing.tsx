@@ -66,7 +66,9 @@ const Testing: React.FC = () => {
             </Grid>
             */}
             {/*Start button*/}
-            <Typography sx={{ 'text-align': 'center' }} >
+            { 
+                <Typography sx={{ 'textAlign': 'center' 
+                }} >
                 <MyButton variant="contained"
                     color="primary"
                     style={{ marginTop: '25px', marginLeft: '10px' }}
@@ -75,7 +77,7 @@ const Testing: React.FC = () => {
                     Calculate
                 </MyButton>
             </Typography>
-
+            }
             {/*Test results*/}
             {/*<div style={{
                 height: 400, width: '36%',

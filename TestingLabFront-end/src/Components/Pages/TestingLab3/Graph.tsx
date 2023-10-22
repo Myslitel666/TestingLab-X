@@ -33,7 +33,7 @@ const Graph: React.FC = () => {
     return (
         <>
             <Typography sx={{
-                'text-align': 'center',
+                'textAlign': 'center',
                 color: `${PrimaryMainColor}`,
                 transition: 'color 1s ease'
             }}>

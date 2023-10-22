@@ -10,7 +10,7 @@ const Problem: React.FC = () => {
     return (
         <>
             <Typography sx={{
-                'text-align': 'center',
+                'textAlign': 'center',
                 color: `${PrimaryMainColor}`,
                 transition: 'color 1s ease'
             }}>
@@ -69,7 +69,7 @@ const Problem: React.FC = () => {
             </Typography>
 
             <Typography sx={{
-                'text-align': 'center',
+                'textAlign': 'center',
                 color: `${PrimaryMainColor}`,
                 transition: 'color 1s ease'
             }}>
@@ -77,7 +77,7 @@ const Problem: React.FC = () => {
             </Typography>
 
             <Typography sx={{
-                'text-align': 'center',
+                'textAlign': 'center',
             }}>
             <img
                 src='/images/expressions/FormulaTesting.png'
