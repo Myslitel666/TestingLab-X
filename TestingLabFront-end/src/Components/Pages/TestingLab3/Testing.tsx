@@ -1,7 +1,13 @@
 ﻿import React, { useState, useEffect } from 'react';
+
+//MUI Import
 import { Grid, TextField, Typography, Box } from '@mui/material';
 import MyButton from '../../Common/MyButton';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+
+//MyComponents Import
+import DrawerLab3 from '../TestingLab3/DrawerLab3'
+import LabsMenu from '../../Common/Header/LabsMenu';
 
 const Testing: React.FC = () => {
     //TextFields
@@ -81,8 +87,10 @@ const Testing: React.FC = () => {
 
     return (
         <>
+            <DrawerLab3 />
+            <LabsMenu />
+
             {/*Input parameters*/}
-            {
             <Grid container spacing={3} alignItems="center" marginTop="10px">
                 <Grid item marginLeft="40px">
                     <Typography>X0 coefficient:</Typography>
@@ -109,7 +117,6 @@ const Testing: React.FC = () => {
                     <TextField label="Input 4" variant="outlined" value={testCases} onChange={(e) => setTestCases(e.target.value)} />
                 </Grid>
             </Grid>
-            }
             {/*Start button*/}
             <Grid justifyContent="center"
                 container spacing={1}

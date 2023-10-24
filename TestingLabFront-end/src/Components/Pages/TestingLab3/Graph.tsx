@@ -1,12 +1,18 @@
 ﻿import React, { useState } from 'react';
 
+//MUI Import
 import { Typography, Grid, Box, } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import MyButton from '../../Common/MyButton';
 
+//MyComponents Import
 import MyBox from '../../Common/MyBox';
+import DrawerLab3 from '../TestingLab3/DrawerLab3'
+import LabsMenu from '../../Common/Header/LabsMenu';
+
+//CSS Import
 import '../TestingLab3/Graph.css'
- 
+
 const Graph: React.FC = () => {
     const theme = useTheme();
     const PrimaryMainColor = theme.palette.primary.main;
@@ -32,6 +38,8 @@ const Graph: React.FC = () => {
 
     return (
         <>
+            <DrawerLab3 />
+            <LabsMenu />
             <Typography variant="h4"
                 sx={{'textAlign': 'center',
                 color: `${PrimaryMainColor}`,

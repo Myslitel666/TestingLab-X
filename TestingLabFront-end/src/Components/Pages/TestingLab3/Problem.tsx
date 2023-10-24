@@ -1,7 +1,12 @@
 ﻿import { Typography } from '@mui/material';
 import React from 'react';
 
+//MUI Import
 import { useTheme } from '@mui/material/styles';
+
+//MyComponents Import
+import DrawerLab3 from '../TestingLab3/DrawerLab3'
+import LabsMenu from '../../Common/Header/LabsMenu';
 
 const Problem: React.FC = () => {
     const theme = useTheme();
@@ -9,6 +14,8 @@ const Problem: React.FC = () => {
 
     return (
         <>
+            <DrawerLab3 />
+            <LabsMenu />
             <Typography variant="h4"
                 sx={{'textAlign': 'center',
                 color: `${PrimaryMainColor}`,
