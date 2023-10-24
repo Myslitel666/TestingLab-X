@@ -76,7 +76,7 @@ const Testing: React.FC = () => {
         <>
             {/*Input parameters*/}
             {
-            <Grid container spacing={3} alignItems="center" marginTop="10px">
+            <Grid alignItems="center" marginTop="10px">
                 <Grid item marginLeft="40px">
                     <Typography>X0 coefficient:</Typography>
                 </Grid>
@@ -127,7 +127,6 @@ const Testing: React.FC = () => {
                 </Grid>
             </Grid>
             <Grid justifyContent="center"
-                  container spacing={3}
                   marginTop="25px">
             {/*Test results*/}
             <div style={{

@@ -51,6 +51,8 @@ const Graph: React.FC = () => {
                         <Typography sx={{
 
                         }}>
+                            <Grid justifyContent="center"
+                                  container spacing={0}>
                             <img
                                 src='/images/Graph.png'
                                 alt='Formula'
@@ -61,7 +63,8 @@ const Graph: React.FC = () => {
                                     borderRadius: '8px',
                                     marginTop: '5px',
                                 }}
-                            />
+                                />
+                            </Grid>
                         </Typography>
                     </MyBox>
                 </Grid>

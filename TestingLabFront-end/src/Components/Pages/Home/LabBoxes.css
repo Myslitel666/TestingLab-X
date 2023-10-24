@@ -9,4 +9,6 @@
     overflow: hidden;
     /*Добавление многоточия после строк*/
     -webkit-line-clamp: 2;
+    /*Центрирование текста*/
+    text-align:center
 }

@@ -43,6 +43,8 @@ const LabsBoxes: React.FC = () => {
                 {labBoxes.map((labBox) => (
                     <Grid item xs={2} md={2} key={labBox.descriptionLabsId}>
                         <MyBox>
+                            <Grid justifyContent="center"
+                                container spacing={0}>
                             <img
                                 src={labBox.imageUrl}
                                 alt={labBox.labDescription}
@@ -51,7 +53,7 @@ const LabsBoxes: React.FC = () => {
                                     maxHeight: '200px',
                                     objectFit: 'cover',
                                     borderRadius: '8px',
-                                    marginTop: '5px'
+                                    marginTop: '5px',
                                 }}
                             />
                             <Typography
@@ -75,7 +77,8 @@ const LabsBoxes: React.FC = () => {
                                 color="primary"
                                 sx={{ marginBottom: '5px', justifyContent: 'center' }}>
                                 View Lab Page
-                            </MyButton>
+                                </MyButton>
+                            </Grid>
                         </MyBox>
                     </Grid>
                 ))}
