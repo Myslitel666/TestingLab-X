@@ -130,7 +130,6 @@ const Graph: React.FC = () => {
 
             <Grid justifyContent="center"
                 container spacing={1}
-                sx={{ 'textAlign': 'center' }}
             >
                 <Grid item xs={1} md={1}>
                     <MyButton variant="contained"

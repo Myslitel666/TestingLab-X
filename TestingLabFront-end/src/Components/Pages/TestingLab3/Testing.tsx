@@ -80,18 +80,28 @@ const Testing: React.FC = () => {
             </Grid>
             }
             {/*Start button*/}
-            { 
-                <Typography sx={{ 'textAlign': 'center' 
-                }} >
-                <MyButton variant="contained"
-                    color="primary"
-                    style={{ marginTop: '25px', marginLeft: '10px' }}
-                    onClick={handleCalculateClick}
+            <Grid justifyContent="center"
+                container spacing={1}
+                sx={{ marginTop: '25px' }}
+            >
+                <Grid item xs={1} md={1}
                 >
-                    Calculate
-                </MyButton>
-            </Typography>
-            }
+                    <MyButton variant="contained"
+                        color="primary"
+                        onClick={handleCalculateClick}
+                    >
+                        Calculate
+                    </MyButton>
+                </Grid>
+                <Grid item xs={1} md={1}>
+                    <MyButton variant="contained"
+                        color="primary"
+                        style={{ width: '115px' }}
+                    >
+                        Clear
+                    </MyButton>
+                </Grid>
+            </Grid>
             {/*Test results*/}
             {<div style={{
                 height: 400, width: '36%',
