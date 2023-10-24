@@ -23,7 +23,7 @@ namespace TestingLab3.Controllers
             {
                 var categories = await _dbContext.LabLists
                     .Where(c => c.LabListId != null)
-                    .Select(c => new { LabName = c.LabName, LabIcon = c.LabIcon })
+                    .Select(c => new { LabName = c.LabName, LabIcon = c.LabIcon, LabLink = c.LabLink })
                     .ToListAsync();
 
                 return Ok(categories);

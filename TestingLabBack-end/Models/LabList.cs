@@ -10,4 +10,6 @@ public partial class LabList
     public string? LabName { get; set; }
 
     public string? LabIcon { get; set; }
+
+    public string? LabLink { get; set; }
 }

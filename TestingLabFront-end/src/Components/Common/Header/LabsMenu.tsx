@@ -8,10 +8,11 @@ import BatteryCharging60Icon from '@mui/icons-material/BatteryCharging60';
 import BatteryCharging80Icon from '@mui/icons-material/BatteryCharging80';
 import BatteryCharging90Icon from '@mui/icons-material/BatteryCharging90';
 import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
-import { useTheme } from '@mui/material/styles';
 import MyTypography from '../MyTypography';
-
 import ArchiveIcon from '@mui/icons-material/Archive';
+
+//MyComponents Import
+import MyLink from '../../Common/MyLink';
 
 //CSS Import
 import './LabsMenu.css';
@@ -33,13 +34,13 @@ const LabsMenu: React.FC = () => {
 
     const apiUrl = process.env.REACT_APP_API_URL as string;
 
-    const [data, setData] = useState<{ labName: string; labIcon: string }[]>([]);
+    const [data, setData] = useState<{ labName: string; labIcon: string, labLink: string }[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get<{
-                    labName: string; labIcon: string
+                    labName: string; labIcon: string; labLink: string
                 }[]>(`${apiUrl}/api/home/categories`);
                 setData(response.data);
             } catch (error) {
@@ -54,10 +55,10 @@ const LabsMenu: React.FC = () => {
         <div className="category-menu">
             {data.map((labObject, index) => (
                 <div key={index} className="category-item">
-                    <MyTypography>
+                    <MyLink href={'../' + labObject.labLink}>
                         {renderIcon(labObject.labIcon) || <div>No Icon</div>}
                         {labObject.labName}
-                    </MyTypography>
+                    </MyLink>
                 </div>
             ))}
         </div>

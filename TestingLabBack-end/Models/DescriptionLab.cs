@@ -14,4 +14,6 @@ public partial class DescriptionLab
     public string? ImageUrl { get; set; }
 
     public int? LabNumber { get; set; }
+
+    public string? LabLink { get; set; }
 }

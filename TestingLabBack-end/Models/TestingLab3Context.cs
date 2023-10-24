@@ -36,6 +36,9 @@ public partial class TestingLab3Context : DbContext
             entity.Property(e => e.LabDescription)
                 .HasMaxLength(256)
                 .IsUnicode(false);
+            entity.Property(e => e.LabLink)
+                .HasMaxLength(256)
+                .IsUnicode(false);
             entity.Property(e => e.LabName)
                 .HasMaxLength(256)
                 .IsUnicode(false);
@@ -47,6 +50,9 @@ public partial class TestingLab3Context : DbContext
 
             entity.Property(e => e.LabListId).HasColumnName("LabListID");
             entity.Property(e => e.LabIcon)
+                .HasMaxLength(256)
+                .IsUnicode(false);
+            entity.Property(e => e.LabLink)
                 .HasMaxLength(256)
                 .IsUnicode(false);
             entity.Property(e => e.LabName)
