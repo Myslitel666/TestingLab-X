@@ -6,8 +6,8 @@ import { DataGrid, GridColDef } from '@mui/x-data-grid';
 const Testing: React.FC = () => {
     //TextFields
     const [x0, setX0] = useState('0'); // Начальное значение для X0 coefficient
-    const [xk, setXk] = useState('10'); // Начальное значение для Xk coefficient
-    const [step, setStep] = useState('1'); // Начальное значение для h (Step)
+    const [xk, setXk] = useState('1000'); // Начальное значение для Xk coefficient
+    const [step, setStep] = useState('100'); // Начальное значение для h (Step)
     const [testCases, setTestCases] = useState('100'); // Начальное значение для Test cases
 
     //Table Fields
@@ -37,6 +37,13 @@ const Testing: React.FC = () => {
             field: 'testResult',
             headerName: 'Test Result',
             width: 135,
+            align: 'center',
+            headerAlign: 'center'
+        },
+        {
+            field: 'typology',
+            headerName: 'Typology',
+            width: 160,
             align: 'center',
             headerAlign: 'center'
         },
@@ -132,7 +139,7 @@ const Testing: React.FC = () => {
             {/*Test results*/}
             <div style={{
                 height: '400px',
-                width: '520'
+                width: '675'
             }}>
                 <DataGrid 
                     rows={rows}

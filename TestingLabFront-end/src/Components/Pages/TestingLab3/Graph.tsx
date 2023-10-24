@@ -57,8 +57,8 @@ const Graph: React.FC = () => {
                                 src='/images/Graph.png'
                                 alt='Formula'
                                 style={{
-                                    maxWidth: '54%',
-                                    maxHeight: '54%',
+                                    maxWidth: '55%',
+                                    maxHeight: '55%',
                                     objectFit: 'cover',
                                     borderRadius: '8px',
                                     marginTop: '5px',
@@ -109,37 +109,37 @@ const Graph: React.FC = () => {
                         }}>
                             {V3}
                         </Typography>
-                    <Typography sx={{
-                        marginTop: '10px',
-                        marginLeft: '10px',
-                        marginRight: '10px',
-                        marginBottom: '10px'
-                    }}>
-                        <span style={{
-                              marginLeft: '20px',
-                              color: `${PrimaryMainColor}`,
-                              transition: 'color 1s ease'
-                        }}>Математически цикломатическая сложность </span>
-                        структурированной программы определяется с помощью
-                        ориентированного графа, узлами которого являются
-                        блоки программы, соединенные рёбрами, если
-                        управление может переходить с одного блока на другой.
-                    </Typography>
-                    <Typography sx={{
-                        marginTop: '10px',
-                        marginLeft: '10px',
-                        marginRight: '10px',
-                        marginBottom: '10px'
-                    }}>
-                        <span style={{
-                            marginLeft: '20px',
-                            color: `${PrimaryMainColor}`,
-                            transition: 'color 1s ease'
-                        }}>Управляющий потоковый граф </span>
-                        - это граф, узлы которого представляют базовые блоки кода,
-                        а ребра представляют переходы между ними.
-                    </Typography>
-                    <img style={{ height: '47px' }}/>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            marginLeft: '10px',
+                            marginRight: '10px',
+                            marginBottom: '10px'
+                        }}>
+                            <span style={{
+                                  marginLeft: '20px',
+                                  color: `${PrimaryMainColor}`,
+                                  transition: 'color 1s ease'
+                            }}>Математически цикломатическая сложность </span>
+                            структурированной программы определяется с помощью
+                            ориентированного графа, узлами которого являются
+                            блоки программы, соединенные рёбрами, если
+                            управление может переходить с одного блока на другой.
+                        </Typography>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            marginLeft: '10px',
+                            marginRight: '10px',
+                            marginBottom: '10px'
+                        }}>
+                            <span style={{
+                                marginLeft: '20px',
+                                color: `${PrimaryMainColor}`,
+                                transition: 'color 1s ease'
+                            }}>Управляющий потоковый граф </span>
+                            - это граф, узлы которого представляют базовые блоки кода,
+                            а ребра представляют переходы между ними.
+                        </Typography>
+                        <img style={{ height: '44px' }}/>
                     </MyBox>
                 </Grid>
             </Grid>
