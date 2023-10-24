@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+п»їimport React, { useState } from 'react';
 import Box, { BoxProps } from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 
 interface MyButtonProps extends BoxProps {
-    // Дополнительные свойства, если необходимо
+    // Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ СЃРІРѕР№СЃС‚РІР°, РµСЃР»Рё РЅРµРѕР±С…РѕРґРёРјРѕ
 }
 
 const MyBox: React.FC<MyButtonProps> = (props) => {

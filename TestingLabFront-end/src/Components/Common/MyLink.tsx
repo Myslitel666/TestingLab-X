@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+п»їimport React, { useState } from 'react';
 import Link, { LinkProps } from '@mui/material/Link';
 import { useTheme } from '@mui/material/styles';
 
 interface MyButtonProps extends LinkProps {
-    // Дополнительные свойства, если необходимо
+    // Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ СЃРІРѕР№СЃС‚РІР°, РµСЃР»Рё РЅРµРѕР±С…РѕРґРёРјРѕ
 }
 
 const MyButton: React.FC<MyButtonProps> = (props) => {

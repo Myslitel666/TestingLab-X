@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore.SqlServer;
+п»їusing Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
 using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
@@ -41,7 +41,7 @@ namespace TestingLab3
 
             app.MapGet("/api/categories/icon", () =>
             {
-                // Вместо возвращения кода иконки, верните только имя иконки
+                // Р’РјРµСЃС‚Рѕ РІРѕР·РІСЂР°С‰РµРЅРёСЏ РєРѕРґР° РёРєРѕРЅРєРё, РІРµСЂРЅРёС‚Рµ С‚РѕР»СЊРєРѕ РёРјСЏ РёРєРѕРЅРєРё
                 return Results.Text("CoffeeMaker");
             });
 
