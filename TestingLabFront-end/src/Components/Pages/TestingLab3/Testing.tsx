@@ -76,7 +76,7 @@ const Testing: React.FC = () => {
         <>
             {/*Input parameters*/}
             {
-            <Grid alignItems="center" marginTop="10px">
+            <Grid container spacing={3} alignItems="center" marginTop="10px">
                 <Grid item marginLeft="40px">
                     <Typography>X0 coefficient:</Typography>
                 </Grid>
@@ -126,14 +126,15 @@ const Testing: React.FC = () => {
                     </MyButton>
                 </Grid>
             </Grid>
-            <Grid justifyContent="center"
+            <Grid container spacing={1}
+                justifyContent="center"
                   marginTop="25px">
             {/*Test results*/}
             <div style={{
                 height: '400px',
                 width: '520'
             }}>
-                <DataGrid sx={{ alignItems: 'center' }}
+                <DataGrid 
                     rows={rows}
                     columns={columns}
                     
