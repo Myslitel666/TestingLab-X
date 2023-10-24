@@ -36,8 +36,6 @@ const LabsMenu: React.FC = () => {
     const [data, setData] = useState<{ labName: string; labIcon: string }[]>([]);
 
     useEffect(() => {
-        console.log("Привет " + apiUrl);
-
         const fetchData = async () => {
             try {
                 const response = await axios.get<{

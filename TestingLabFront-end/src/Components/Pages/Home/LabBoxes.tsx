@@ -42,7 +42,7 @@ const LabsBoxes: React.FC = () => {
                 }}>
                 {labBoxes.map((labBox) => (
                     <Grid item xs={2} md={2} key={labBox.descriptionLabsId}>
-                        <MyBox className="product-box">
+                        <MyBox>
                             <img
                                 src={labBox.imageUrl}
                                 alt={labBox.labDescription}

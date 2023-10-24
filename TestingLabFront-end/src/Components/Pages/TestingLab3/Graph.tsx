@@ -36,20 +36,18 @@ const Graph: React.FC = () => {
                 sx={{'textAlign': 'center',
                 color: `${PrimaryMainColor}`,
                     transition: 'color 1s ease',
-                    marginTop: '20px'
+                    marginTop: '2%'
             }}>
                 Control Flow Graph of the Program
             </Typography>
             <Grid container spacing={6} sx={{
-                paddingTop: '1%',
-                paddingBottom: '1%',
+                paddingTop: '3%',
+                paddingBottom: '3%',
                 paddingLeft: '3%', 
                 paddingRight: '3%', 
-                marginBottom: '25px',
-                marginTop: '-30px'
             }}>
                 <Grid item xs={6} md={6}>
-                    <MyBox className="product-box">
+                    <MyBox>
                         <Typography sx={{
 
                         }}>
@@ -57,8 +55,8 @@ const Graph: React.FC = () => {
                                 src='/images/Graph.png'
                                 alt='Formula'
                                 style={{
-                                    maxWidth: '57%',
-                                    maxHeight: '57%',
+                                    maxWidth: '54%',
+                                    maxHeight: '54%',
                                     objectFit: 'cover',
                                     borderRadius: '8px',
                                     marginTop: '5px',
@@ -68,62 +66,77 @@ const Graph: React.FC = () => {
                     </MyBox>
                 </Grid>
                 <Grid item xs={6} md={6}>
-                    <MyBox className="product-box2">
-                            <Typography sx={{ marginTop: '10px' }}>
-                                <span style={{
-                                    marginLeft: '20px',
-                                    color: `${PrimaryMainColor}`,
-                                    transition: 'color 1s ease'
-                                }}>Цикломатическая сложность V(G) </span>
-                                - число независиых линейных путей в базовом
-                                множестве, которое определяется одним из
-                                способов:
-                            </Typography>
-                            <Typography sx={{
-                                marginTop: '10px',
-                                color: `${PrimaryMainColor}`,
-                                transition: 'color 1s ease',
-                                'textAlign': 'center',
-                            }}>
-                                {V1}
-                            </Typography>
-                            <Typography sx={{
-                                marginTop: '10px',
-                                color: `${PrimaryMainColor}`,
-                                transition: 'color 1s ease',
-                                'textAlign': 'center',
-                            }}>
-                                {V2}
-                            </Typography>
-                            <Typography sx={{
-                                marginTop: '10px',
-                                color: `${PrimaryMainColor}`,
-                                transition: 'color 1s ease',
-                                'textAlign': 'center',
-                            }}>
-                                {V3}
-                            </Typography>
-                            <Typography sx={{ marginTop: '10px' }} >
-                                <span style={{
-                                    marginLeft: '20px',
-                                    color: `${PrimaryMainColor}`,
-                                    transition: 'color 1s ease'
-                                }}>Математически цикломатическая сложность </span>
-                                структурированной программы определяется с помощью
-                                ориентированного графа, узлами которого являются
-                                блоки программы, соединенные рёбрами, если
-                                управление может переходить с одного блока на другой.
-                            </Typography>
-                            <Typography sx={{ marginTop: '10px' }} >
-                                <span style={{
-                                    marginLeft: '20px',
-                                    color: `${PrimaryMainColor}`,
-                                    transition: 'color 1s ease'
-                                }}>Управляющий потоковый граф </span>
-                                - это граф, узлы которого представляют базовые блоки кода,
-                                а ребра представляют переходы между ними.
-                            </Typography>
-                            <img style={{ height: '78px' }}/>
+                    <MyBox>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            marginLeft: '10px',
+                            marginRight: '10px',
+                            marginBottom: '10px'
+                        }}>
+                            <span style={{
+                                  marginLeft: '20px',
+                                  color: `${PrimaryMainColor}`,
+                                  transition: 'color 1s ease'
+                            }}>Цикломатическая сложность V(G) </span>
+                            - число независиых линейных путей в базовом
+                            множестве, которое определяется одним из
+                            способов:
+                        </Typography>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            color: `${PrimaryMainColor}`,
+                            transition: 'color 1s ease',
+                            'textAlign': 'center',
+                        }}>
+                            {V1}
+                        </Typography>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            color: `${PrimaryMainColor}`,
+                            transition: 'color 1s ease',
+                            'textAlign': 'center',
+                        }}>
+                            {V2}
+                        </Typography>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            color: `${PrimaryMainColor}`,
+                            transition: 'color 1s ease',
+                            'textAlign': 'center',
+                        }}>
+                            {V3}
+                        </Typography>
+                    <Typography sx={{
+                        marginTop: '10px',
+                        marginLeft: '10px',
+                        marginRight: '10px',
+                        marginBottom: '10px'
+                    }}>
+                        <span style={{
+                              marginLeft: '20px',
+                              color: `${PrimaryMainColor}`,
+                              transition: 'color 1s ease'
+                        }}>Математически цикломатическая сложность </span>
+                        структурированной программы определяется с помощью
+                        ориентированного графа, узлами которого являются
+                        блоки программы, соединенные рёбрами, если
+                        управление может переходить с одного блока на другой.
+                    </Typography>
+                    <Typography sx={{
+                        marginTop: '10px',
+                        marginLeft: '10px',
+                        marginRight: '10px',
+                        marginBottom: '10px'
+                    }}>
+                        <span style={{
+                            marginLeft: '20px',
+                            color: `${PrimaryMainColor}`,
+                            transition: 'color 1s ease'
+                        }}>Управляющий потоковый граф </span>
+                        - это граф, узлы которого представляют базовые блоки кода,
+                        а ребра представляют переходы между ними.
+                    </Typography>
+                    <img style={{ height: '47px' }}/>
                     </MyBox>
                 </Grid>
             </Grid>
@@ -147,6 +160,82 @@ const Graph: React.FC = () => {
                     >
                         Clear
                     </MyButton>
+                </Grid>
+            </Grid>
+
+            <Grid container spacing={6} sx={{
+                paddingTop: '3%',
+                paddingBottom: '3%',
+                paddingLeft: '3%',
+                paddingRight: '3%',
+            }}>
+                <Grid item xs={6} md={6}>
+                    <MyBox>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            marginLeft: '10px',
+                            marginRight: '10px',
+                            marginBottom: '10px'
+                        }}
+                        >
+                            <span style={{
+                                marginLeft: '20px',
+                                color: `${PrimaryMainColor}`,
+                                transition: 'color 1s ease'
+                            }}>White Box Testing </span>
+                            - метод тестирования программного обеспечения, который
+                            предполагает, что внутренняя структура/устройство/
+                            реализация системы известны тестировщику.
+                            Подбор входных значений и процедура тестирования также
+                            основыввается на знании кода.
+                        </Typography>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            marginLeft: '10px',
+                            marginRight: '10px',
+                            marginBottom: '10px'
+                        }}>
+                            <span style={{
+                                marginLeft: '20px',
+                                transition: 'color 1s ease'
+                            }}>При этом данный метод подразумевает, что все операторы,
+                                переходы, решения должны быть покрыты.</span>
+                        </Typography>
+                    </MyBox>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                    <MyBox>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            marginLeft: '10px',
+                            marginRight: '10px',
+                            marginBottom: '10px'
+                        }}
+                        >
+                            <span style={{
+                                marginLeft: '20px',
+                                color: `${PrimaryMainColor}`,
+                                transition: 'color 1s ease'
+                            }}>White Box Testing </span>
+                            - метод тестирования программного обеспечения, который
+                            предполагает, что внутренняя структура/устройство/
+                            реализация системы известны тестировщику.
+                            Подбор входных значений и процедура тестирования также
+                            основыввается на знании кода.
+                        </Typography>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            marginLeft: '10px',
+                            marginRight: '10px',
+                            marginBottom: '10px'
+                        }}>
+                            <span style={{
+                                marginLeft: '20px',
+                                transition: 'color 1s ease'
+                            }}>При этом данный метод подразумевает, что все операторы,
+                            переходы, решения должны быть покрыты.</span>
+                        </Typography>
+                    </MyBox>
                 </Grid>
             </Grid>
         </>

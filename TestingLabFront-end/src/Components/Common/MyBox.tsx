@@ -2,6 +2,9 @@
 import Box, { BoxProps } from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 
+//CSS Import
+import '../Common/MyBox.css';
+
 interface MyButtonProps extends BoxProps {
     // Дополнительные свойства, если необходимо
 }
@@ -24,6 +27,7 @@ const MyBox: React.FC<MyButtonProps> = (props) => {
     return (
         <Box
             {...props}
+            className="product-box"
             onMouseEnter={() => handleMouseEnter()}
             onMouseLeave={handleMouseLeave}
             sx={{
@@ -31,6 +35,7 @@ const MyBox: React.FC<MyButtonProps> = (props) => {
                 borderRadius: '10px',
                 padding: '10px',
                 cursor: 'pointer',
+                transition: 'border-color 1s ease, transform 0.3s ease,'
             }}
         />
     );

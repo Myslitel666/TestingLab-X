@@ -1,7 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { Grid, TextField, Typography, Box } from '@mui/material';
 import MyButton from '../../Common/MyButton';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 const Testing: React.FC = () => {
     //TextFields
@@ -11,11 +11,35 @@ const Testing: React.FC = () => {
     const [testCases, setTestCases] = useState('100'); // Начальное значение для Test cases
 
     //Table Fields
-    const columns = [
-        { field: 'testNumber', headerName: 'Test Number (№)', width: 130 },
-        { field: 'expectedResult', headerName: 'Expected Result', width: 130 },
-        { field: 'actualResult', headerName: 'Actual Result', width: 130 },
-        { field: 'testResult', headerName: 'Test Result', width: 130 },
+    const columns: GridColDef[] = [
+        {
+            field: 'testNumber',
+            headerName: 'Test Number (№)',
+            width: 135,
+            align: 'center',
+            headerAlign: 'center'
+        },
+        {
+            field: 'expectedResult',
+            headerName: 'Expected Result',
+            width: 135,
+            align: 'center',
+            headerAlign: 'center'
+        },
+        {
+            field: 'actualResult',
+            headerName: 'Actual Result',
+            width: 135,
+            align: 'center',
+            headerAlign: 'center'
+        },
+        {
+            field: 'testResult',
+            headerName: 'Test Result',
+            width: 135,
+            align: 'center',
+            headerAlign: 'center'
+        },
     ];
 
     const [rows, setRows] = useState([]);
@@ -84,7 +108,7 @@ const Testing: React.FC = () => {
                 container spacing={1}
                 sx={{ marginTop: '25px' }}
             >
-                <Grid item xs={1} md={1}
+                <Grid item xs={2} md={1}
                 >
                     <MyButton variant="contained"
                         color="primary"
@@ -93,7 +117,7 @@ const Testing: React.FC = () => {
                         Calculate
                     </MyButton>
                 </Grid>
-                <Grid item xs={1} md={1}>
+                <Grid item xs={2} md={1}>
                     <MyButton variant="contained"
                         color="primary"
                         style={{ width: '115px' }}
@@ -102,18 +126,21 @@ const Testing: React.FC = () => {
                     </MyButton>
                 </Grid>
             </Grid>
+            <Grid justifyContent="center"
+                  container spacing={3}
+                  marginTop="25px">
             {/*Test results*/}
-            {<div style={{
-                height: 400, width: '36%',
-                margin: '0 auto', marginTop: '25px',
-                marginLeft: '32%'
+            <div style={{
+                height: '400px',
+                width: '520'
             }}>
-                <DataGrid sx={{ align: 'center' }}
+                <DataGrid sx={{ alignItems: 'center' }}
                     rows={rows}
                     columns={columns}
+                    
                 />
-            </div>
-            }
+                </div>
+            </Grid>
         </>
     );
 };
