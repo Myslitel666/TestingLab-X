@@ -85,6 +85,16 @@ const Testing: React.FC = () => {
         fetchData(); // Вызываем функцию загрузки данных при нажатии на кнопку
     };
 
+    // Функция для обновления текста по нажатию кнопки
+    const clearButtonClick = () => {
+        setX0(``);
+        setXk(``);
+        setStep(``);
+        setTestCases(``);
+
+        setRows([]);
+    };
+
     return (
         <>
             <DrawerLab3 />
@@ -134,6 +144,7 @@ const Testing: React.FC = () => {
                 <Grid item xs={2} md={1}>
                     <MyButton variant="contained"
                         color="primary"
+                        onClick={clearButtonClick}
                         style={{ width: '115px' }}
                     >
                         Clear
@@ -141,18 +152,17 @@ const Testing: React.FC = () => {
                 </Grid>
             </Grid>
             <Grid container spacing={1}
-                justifyContent="center"
-                  marginTop="25px">
-            {/*Test results*/}
-            <div style={{
-                height: '400px',
-                width: '675'
-            }}>
-                <DataGrid 
-                    rows={rows}
-                    columns={columns}
-                    
-                />
+                  justifyContent="center"
+                  marginTop="25px"
+            >
+                <div style={{
+                    height: '400px',
+                    width: '675'
+                }}>
+                    <DataGrid 
+                        rows={rows}
+                        columns={columns}
+                    />
                 </div>
             </Grid>
         </>
