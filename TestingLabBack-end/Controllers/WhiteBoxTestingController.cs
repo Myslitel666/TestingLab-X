@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Azure.Core;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TestingLab3.Models;
@@ -31,10 +32,22 @@ namespace TestingLab3.Controllers
         {
             try
             {
-                Console.WriteLine($"X0: {request.X0}");
-                Console.WriteLine($"Xk: {request.Xk}");
-                Console.WriteLine($"Step: {request.Step}");
-                Console.WriteLine($"TestCases: {request.TestCases}");
+                //Заменяем точки на запятые для корректного парсинга
+                request.X0 = request.X0.Replace('.', ',');
+                request.Xk = request.Xk.Replace('.', ',');
+                request.Step = request.Step.Replace('.', ',');
+                request.TestCases = request.TestCases.Replace('.', ',');
+
+                //Инициализируем даблы для их дальнейшего использования
+                double X0 = double.Parse(request.X0);
+                double Xk = double.Parse(request.Xk);
+                double Step = double.Parse(request.Step);
+                double TestCases = double.Parse(request.TestCases);
+
+                Console.WriteLine($"X0: {X0}");
+                Console.WriteLine($"Xk: {Xk}");
+                Console.WriteLine($"Step: {Step}");
+                Console.WriteLine($"TestCases: {TestCases}");
 
                 var rows = new[]
                 {

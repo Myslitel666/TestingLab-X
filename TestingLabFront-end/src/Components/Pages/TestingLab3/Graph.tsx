@@ -127,22 +127,29 @@ const Graph: React.FC = () => {
                     </MyBox>
                 </Grid>
             </Grid>
-            <Typography sx={{ 'textAlign': 'center' }} >
-                <MyButton variant="contained"
-                    color="primary"
-                    onClick={calculateButtonClick}
-                    style={{ marginRight: '25px', marginLeft: '10px' }}
-                >
-                    Calculate
-                </MyButton>
-                <MyButton variant="contained"
-                    color="primary"
-                    onClick={clearButtonClick}
-                    style={{ width: '115px' }}
-                >
-                    Clear
-                </MyButton>
-            </Typography>
+
+            <Grid justifyContent="center"
+                container spacing={1}
+                sx={{ 'textAlign': 'center' }}
+            >
+                <Grid item xs={1} md={1}>
+                    <MyButton variant="contained"
+                        color="primary"
+                        onClick={calculateButtonClick}
+                    >
+                        Calculate
+                    </MyButton>
+                </Grid>
+                <Grid item xs={1} md={1}>
+                    <MyButton variant="contained"
+                        color="primary"
+                        onClick={clearButtonClick}
+                        style={{ width: '115px' }}
+                    >
+                        Clear
+                    </MyButton>
+                </Grid>
+            </Grid>
         </>
     );
 };
