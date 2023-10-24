@@ -13,7 +13,7 @@ const Testing: React.FC = () => {
     //TextFields
     const [x0, setX0] = useState('0'); // Начальное значение для X0 coefficient
     const [xk, setXk] = useState('1000'); // Начальное значение для Xk coefficient
-    const [step, setStep] = useState('100'); // Начальное значение для h (Step)
+    const [step, setStep] = useState('1'); // Начальное значение для h (Step)
     const [testCases, setTestCases] = useState('100'); // Начальное значение для Test cases
 
     //Table Fields
