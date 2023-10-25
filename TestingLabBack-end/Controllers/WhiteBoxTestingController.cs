@@ -36,44 +36,71 @@ namespace TestingLab3.Controllers
                               double xk, double h, out List<double> y,
                               out List<string> typology)
         {
-            typology = new List<string>() { "a" }; //Инициализация топологии путей
-
             y = new List<double>(); //Создаём пустой список
 
-            typology.Add("b");
+            typology = new List<string>() { "a" }; //Инициализация топологии путей
 
             for (double x = x0; x < xk; x += h)
             {
-                //Вход в Cycle
-                if (!typology.Contains("d")) typology.Add("d");
-
                 //ERROR
                 if (a < 0 && b < 0)
                 {
-                    y.Add(x + 2 * x - 1);
+                    //Проверка условия
+                    if (!typology.Contains("d")) typology.Add("d");
+
+                    //Конкретное это условие - true
                     if (!typology.Contains("f")) typology.Add("f");
+                    y.Add(x + 2 * x - 1);
+
+                    //Вычислительный operator
+                    if (!typology.Contains("g")) typology.Add("g");
                 }
                 else if (a < 0 && b >= 0)
                 {
-                    y.Add(2 * x - 3);
+                    //Проверка условий
+                    if (!typology.Contains("d")) typology.Add("d");
+                    if (!typology.Contains("e")) typology.Add("e");
+
+                    //Конкретное это условие - true
                     if (!typology.Contains("h")) typology.Add("h");
+                    y.Add(2 * x - 3);
+
+                    //Вычислительный operator
+                    if (!typology.Contains("i")) typology.Add("i");
                 }
                 else if (a >= 0 && b < 0)
                 {
+                    //Проверка условий
+                    if (!typology.Contains("d")) typology.Add("d");
+                    if (!typology.Contains("e")) typology.Add("e");
+                    if (!typology.Contains("n")) typology.Add("n");
+
+                    //Конкретное это условие - true
+                    if (!typology.Contains("j")) typology.Add("j");
+
                     y.Add(x - 5);
-                    if (!typology.Contains("g")) typology.Add("g");
+
+                    //Вычислительный operator
+                    if (!typology.Contains("k")) typology.Add("k");
                 }
                 else
                 {
+                    //Проверка условий
+                    if (!typology.Contains("d")) typology.Add("d");
+                    if (!typology.Contains("e")) typology.Add("e");
+                    if (!typology.Contains("n")) typology.Add("n");
+                    if (!typology.Contains("l")) typology.Add("l");
+
+                    //Конкретное это условие - true
+                    if (!typology.Contains("l")) typology.Add("l");
                     y.Add(3 * x + 4);
+
+                    //Вычислительный operator
                     if (!typology.Contains("m")) typology.Add("m");
                 }
-                //Проверки условий
-                if (!typology.Contains("e")) typology.Add("e");
-                if (!typology.Contains("n")) typology.Add("n");
-                if (!typology.Contains("l")) typology.Add("l");
-                if (!typology.Contains("m")) typology.Add("m");
             }
+
+            if (!typology.Contains("b")) typology.Add("b"); //Проверка условия цикла
 
             //Выход из Cycle
             if (!typology.Contains("c")) typology.Add("c");
