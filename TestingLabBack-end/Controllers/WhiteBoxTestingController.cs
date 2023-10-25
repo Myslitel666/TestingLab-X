@@ -143,8 +143,8 @@ namespace TestingLab3.Controllers
         [HttpPost]
         public IActionResult Calculate([FromBody] CalculationRequest request)
         {
-            //try
-            //{
+            try
+            {
                 //Заменяем точки на запятые для корректного парсинга
                 request.X0 = request.X0.Replace('.', ',');
                 request.Xk = request.Xk.Replace('.', ',');
@@ -219,17 +219,17 @@ namespace TestingLab3.Controllers
                                                  ActualResult = yActual[i], 
                                                  TestResult = testResult[i], 
                                                  Typology = typologyList[i] }
-                    );
+                        );
                 }
 
                 return Ok(rows);
-            //}
-            //catch (Exception ex)
-            //{
-            //    // Логируем ошибки
-            //    Console.WriteLine($"Error: {ex.Message}");
-            //    return StatusCode(500, "Internal server error.");
-            //}
+            }
+            catch (Exception ex)
+            {
+                // Логируем ошибки
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, "Internal server error.");
+            }
         }
     }
 }
