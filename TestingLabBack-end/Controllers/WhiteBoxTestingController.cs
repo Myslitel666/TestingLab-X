@@ -106,7 +106,7 @@ namespace TestingLab3.Controllers
             if (!typology.Contains("c")) typology.Add("c");
         }
 
-        //Метод, над которым производится тестирование
+        //Метод, с прмощью которого производится тестирование
         public static List<double> myTestingFunc(double a, double b,
                                           double x0, double xk, double h)
         {
@@ -143,8 +143,8 @@ namespace TestingLab3.Controllers
         [HttpPost]
         public IActionResult Calculate([FromBody] CalculationRequest request)
         {
-            try
-            {
+            //try
+            //{
                 //Заменяем точки на запятые для корректного парсинга
                 request.X0 = request.X0.Replace('.', ',');
                 request.Xk = request.Xk.Replace('.', ',');
@@ -164,43 +164,47 @@ namespace TestingLab3.Controllers
                 var yExpected = new List<double>();
                 var testResult = new List<string>();
                 var typologyList = new List<string>();
-                Random random = new Random();
+                Random globalRand = new Random();
 
                 //Производим работу методов
                 for (int i = 1; i <= testCases; i++)
                 {
+                    //Меняем точку рандомайзера
+                    Random random = new Random(globalRand.Next() * i + i * 100);
+
                     //Инициализируем переменные для одной серии тестов
-                    var yTesting = new List<double>();
-                    var y = new List<double>();
-                    var yError = new List<double>();
+                    var yActualLocal = new List<double>();
+                    var yExpectedLocal = new List<double>();
                     var typology = new List<string>();
 
                     //Генерирация тестовых вариантов
                     double a = (double)random.Next(-100, 100);
                     double b = (double)random.Next(-100, 100);
 
-                    y = WhiteBoxTesting.myTestingFunc(a, b, x0, xk, step);
+                    yExpectedLocal = WhiteBoxTesting.myTestingFunc(a, b, x0, xk, step);
                     WhiteBoxTesting.errorFunc(a, b, x0, xk, step,
-                    out yTesting, out typology);
+                    out yActualLocal, out typology);
 
-                    yActual.AddRange(yTesting);
-                    yExpected.AddRange(y);
+                    yActual.AddRange(yActualLocal);
+                    yExpected.AddRange(yExpectedLocal);
 
                     //Собираем список топологий путей
-                    for (int j = 0; j < yExpected.Count; j++)
+                    for (int j = 0; j < yActualLocal.Count; j++)
                     {
                         typologyList.Add(string.Join(", ", typology));
                     }
-                }
 
-                //Фиксируем результаты тестирования
-                for (int i = 0; i < yExpected.Count; i++)
-                {
-                    if (yExpected[i] == yActual[i]) {
-                        testResult.Add("Passed");
-                    }
-                    else {
-                        testResult.Add("Failed");
+                    //Фиксируем результаты тестирования
+                    for (int j = 0; j < yActualLocal.Count; j++)
+                    {
+                        if (yExpectedLocal[j] == yActualLocal[j])
+                        {
+                            testResult.Add("Passed");
+                        }
+                        else
+                        {
+                            testResult.Add("Failed");
+                        }
                     }
                 }
 
@@ -219,13 +223,13 @@ namespace TestingLab3.Controllers
                 }
 
                 return Ok(rows);
-            }
-            catch (Exception ex)
-            {
-                // Логируем ошибки
-                Console.WriteLine($"Error: {ex.Message}");
-                return StatusCode(500, "Internal server error.");
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    // Логируем ошибки
+            //    Console.WriteLine($"Error: {ex.Message}");
+            //    return StatusCode(500, "Internal server error.");
+            //}
         }
     }
 }
