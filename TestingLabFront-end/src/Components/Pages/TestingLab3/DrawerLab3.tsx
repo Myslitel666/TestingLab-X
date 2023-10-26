@@ -164,7 +164,7 @@ export default function PersistentDrawerLeft() {
                                     {index % 2 === 0 ? <MailIcon /> : <InboxIcon />}
                                     <ListItemText sx={{ marginLeft: "20px" }} primary={text} />
                             </ListItemButton>
-                            </ListItem>
+                        </ListItem>
                     ))}
                 </List>
             </Drawer>

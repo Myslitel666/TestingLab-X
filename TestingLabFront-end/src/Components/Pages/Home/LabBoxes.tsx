@@ -2,12 +2,12 @@
 import axios from 'axios';
 
 //MUI Import
-import { Paper, Typography, Grid } from '@mui/material';
+import { Paper, Typography, Grid, Link } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 //MyComponents Import
 import MyButton from '../../Common/MyButton'
 import MyBox from '../../Common/MyBox';
-import MyLink from '../../Common/MyLink';
 
 //CSS Import
 import '../Home/LabBoxes.css';
@@ -33,6 +33,9 @@ const LabsBoxes: React.FC = () => {
         fetchData();
     }, []); // Пустой массив зависимостей, чтобы useEffect выполнился только один раз после монтирования компонента
 
+    const theme = useTheme();
+    const PrimaryDarkColor = theme.palette.text.primary;
+
     return (
         <Paper elevation={3} sx={{ paddingLeft: '20px', paddingTop: '13px', paddingRight: '20px'}}>
             <Typography fontWeight="bold" variant="h5">Works List</Typography>
@@ -42,49 +45,52 @@ const LabsBoxes: React.FC = () => {
                 }}>
                 {labBoxes.map((labBox) => (
                     <Grid item xs={2} md={2} key={labBox.descriptionLabsId}>
-                        <MyLink href={labBox.labLink}>
-                        <MyBox>
-                            <Grid justifyContent="center"
-                                container spacing={0}>
-                                <img
-                                    src={labBox.imageUrl}
-                                    alt={labBox.labDescription}
-                                    style={{
-                                        maxWidth: '100%',
-                                        maxHeight: '200px',
-                                        objectFit: 'cover',
-                                        borderRadius: '8px',
-                                        marginTop: '5px',
-                                    }}
-                                />
-                                <Typography
-                                    fontWeight="bold"
-                                    variant="h5"
-                                    color="primary"
-                                    sx={{
-                                        marginTop: '7px',
-                                        transition: 'color 1s ease'
-                                    }}
-                                >
-                                    {labBox.labName}
-                                </Typography>
-                                <Typography
-                                    className="product-name"
-                                    variant="subtitle1">
-                                    {labBox.labDescription}
-                                </Typography>
-                                <MyButton
-                                    variant="contained"
-                                    color="primary"
-                                    sx={{
-                                        marginBottom: '5px',
-                                        justifyContent: 'center'
-                                    }}>
-                                    View Lab Page
-                                </MyButton>
-                            </Grid>
+                        <Link href={labBox.labLink}>
+                            <MyBox>
+                                <Grid justifyContent="center"
+                                    container spacing={0}>
+                                    <img
+                                        src={labBox.imageUrl}
+                                        alt={labBox.labDescription}
+                                        style={{
+                                            maxWidth: '100%',
+                                            maxHeight: '200px',
+                                            objectFit: 'cover',
+                                            borderRadius: '8px',
+                                            marginTop: '5px',
+                                        }}
+                                    />
+                                    <Typography
+                                        fontWeight="bold"
+                                        variant="h5"
+                                        color="primary"
+                                        sx={{
+                                            marginTop: '7px',
+                                            transition: 'color 1s ease'
+                                        }}
+                                    >
+                                        {labBox.labName}
+                                    </Typography>
+                                    <Typography
+                                        className="product-name"
+                                        variant="subtitle1"
+                                        color={PrimaryDarkColor}
+                                    >
+                                        {labBox.labDescription}
+                                    </Typography>
+                                    <MyButton
+                                        variant="contained"
+                                        color="primary"
+                                        sx={{
+                                            marginBottom: '5px',
+                                            justifyContent: 'center'
+                                        }}
+                                    >
+                                        View Lab Page
+                                    </MyButton>
+                                </Grid>
                             </MyBox>
-                        </MyLink>
+                        </Link>
                     </Grid>
                 ))}
             </Grid>
