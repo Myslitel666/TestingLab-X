@@ -45,7 +45,9 @@ const LabsBoxes: React.FC = () => {
                 }}>
                 {labBoxes.map((labBox) => (
                     <Grid item xs={2} md={2} key={labBox.descriptionLabsId}>
-                        <Link href={labBox.labLink}>
+                        <Link href={labBox.labLink}
+                              underline="none"
+                        >
                             <MyBox>
                                 <Grid justifyContent="center"
                                     container spacing={0}>
