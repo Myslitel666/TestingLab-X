@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace TestingLab3.Models;
+namespace TestingLabX.Models;
 
 public partial class TestingLab3Context : DbContext
 {

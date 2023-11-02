@@ -14,7 +14,7 @@ const Testing: React.FC = () => {
     const [x0, setX0] = useState('0'); // Начальное значение для X0 coefficient
     const [xk, setXk] = useState('10'); // Начальное значение для Xk coefficient
     const [step, setStep] = useState('1'); // Начальное значение для h (Step)
-    const [testCases, setTestCases] = useState('100000'); // Начальное значение для Test cases
+    const [testCases, setTestCases] = useState('10000'); // Начальное значение для Test cases
 
     //Table Fields
     const columns: GridColDef[] = [
@@ -61,7 +61,7 @@ const Testing: React.FC = () => {
 
     async function fetchData() {
         try {
-            const response = await fetch(`${apiUrl}/api/testingLab3`, {
+            const response = await fetch(`${apiUrl}/api/testingLab4`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

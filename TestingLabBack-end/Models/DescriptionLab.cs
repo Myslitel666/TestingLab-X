@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TestingLab3.Models;
+namespace TestingLabX.Models;
 
 public partial class DescriptionLab
 {

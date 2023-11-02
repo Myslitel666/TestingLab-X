@@ -9,27 +9,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TestingLabX.Controllers
 {
-    //Структура данных, которая представляет из себя результаты тестирования
-    public class TestingResult
-    {
-        public int Id { get; set; }
-        public int TestNumber { get; set; }
-        public double ExpectedResult { get; set; }
-        public double ActualResult { get; set; }
-        public string Typology { get; set; }
-        public string TestResult { get; set; }
-    }
-
-    //Набор данных, необходимый для проведения тестирования
-    public class CalculationRequest
-    {
-        public string X0 { get; set; }
-        public string Xk { get; set; }
-        public string Step { get; set; }
-        public string TestCases { get; set; }
-    }
-
-    public class WhiteBoxTesting
+    public class FunctionalTesting
     {
         //Метод, над которым производится тестирование
         public static void errorFunc(double a, double b, double x0,
@@ -137,8 +117,8 @@ namespace TestingLabX.Controllers
     }
 
     [ApiController]
-    [Route("api/testingLab3")]
-    public class WhiteBoxTestingController : ControllerBase
+    [Route("api/testingLab4")]
+    public class FunctionalTestingController : ControllerBase
     {
         [HttpPost]
         public IActionResult Calculate([FromBody] CalculationRequest request)
@@ -214,11 +194,15 @@ namespace TestingLabX.Controllers
                 for (int i = 0; i < testResult.Count; i++)
                 {
                     rows.Add(
-                        new TestingResult { Id = i, TestNumber = i + 1, 
-                                                 ExpectedResult = yExpected[i], 
-                                                 ActualResult = yActual[i], 
-                                                 TestResult = testResult[i], 
-                                                 Typology = typologyList[i] }
+                        new TestingResult
+                        {
+                            Id = i,
+                            TestNumber = i + 1,
+                            ExpectedResult = yExpected[i],
+                            ActualResult = yActual[i],
+                            TestResult = testResult[i],
+                            Typology = typologyList[i]
+                        }
                         );
                 }
 

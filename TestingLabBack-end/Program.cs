@@ -6,7 +6,7 @@ using System.IO;
 using System.Runtime.Intrinsics.X86;
 using Microsoft.AspNetCore.Hosting;
 
-namespace TestingLab3
+namespace TestingLabX
 {
     public class Program
     {

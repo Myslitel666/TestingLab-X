@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TestingLab3.Models;
+using TestingLabX.Models;
 
-namespace TestingLab3.Controllers
+namespace TestingLabX.Controllers
 {
     [Route("api/home")]
     [ApiController]
