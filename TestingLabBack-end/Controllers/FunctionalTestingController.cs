@@ -18,15 +18,21 @@ namespace TestingLabX.Controllers
         {
             y = new List<double>(); //Создаём пустой список
 
-            typology = new List<string>() { "a" }; //Инициализация топологии путей
+            typology = new List<string>() { "a", "b" }; //Инициализация топологии путей
 
-            for (double x = x0; x < xk; x += h)
+            //ERROR
+            if (a < 0 && b < 0)
             {
-                //ERROR
-                if (a < 0 && b < 0)
+                //Первое условие истинно
+                if (!typology.Contains("c")) typology.Add("c");
+
+                for (double x = x0; x < xk; x += h)
                 {
-                    //Проверка условия
-                    if (!typology.Contains("d")) typology.Add("d");
+                    //Проверка принадлежности икс классу эквивалентности
+                    if ((x > x0) && (x < xk))
+                    {
+                        if (!typology.Contains("d")) typology.Add("d");
+                    }
 
                     //Конкретное это условие - true
                     if (!typology.Contains("f")) typology.Add("f");
@@ -35,11 +41,20 @@ namespace TestingLabX.Controllers
                     //Вычислительный operator
                     if (!typology.Contains("g")) typology.Add("g");
                 }
-                else if (a < 0 && b >= 0)
+            }
+            else if (a < 0 && b >= 0)
+            {
+                //Второе условие истинно
+                if (!typology.Contains("c")) typology.Add("c");
+                if (!typology.Contains("e")) typology.Add("e");
+
+                for (double x = x0; x < xk; x += h)
                 {
-                    //Проверка условий
-                    if (!typology.Contains("d")) typology.Add("d");
-                    if (!typology.Contains("e")) typology.Add("e");
+                    //Проверка принадлежности икс классу эквивалентности
+                    if ((x > x0) && (x < xk))
+                    {
+                        if (!typology.Contains("d")) typology.Add("d");
+                    }
 
                     //Конкретное это условие - true
                     if (!typology.Contains("h")) typology.Add("h");
@@ -48,28 +63,45 @@ namespace TestingLabX.Controllers
                     //Вычислительный operator
                     if (!typology.Contains("i")) typology.Add("i");
                 }
-                else if (a >= 0 && b < 0)
+            }
+            else if (a >= 0 && b < 0)
+            {
+                //Третье условие истинно
+                if (!typology.Contains("c")) typology.Add("c");
+                if (!typology.Contains("e")) typology.Add("e");
+                if (!typology.Contains("n")) typology.Add("n");
+
+                for (double x = x0; x < xk; x += h)
                 {
-                    //Проверка условий
-                    if (!typology.Contains("d")) typology.Add("d");
-                    if (!typology.Contains("e")) typology.Add("e");
-                    if (!typology.Contains("n")) typology.Add("n");
+                    //Проверка принадлежности икс классу эквивалентности
+                    if ((x > x0) && (x < xk))
+                    {
+                        if (!typology.Contains("d")) typology.Add("d");
+                    }
 
                     //Конкретное это условие - true
                     if (!typology.Contains("j")) typology.Add("j");
-
                     y.Add(x - 5);
 
                     //Вычислительный operator
                     if (!typology.Contains("k")) typology.Add("k");
                 }
-                else
+            }
+            else
+            {
+                //Четвёртое условие истинно
+                if (!typology.Contains("c")) typology.Add("c");
+                if (!typology.Contains("e")) typology.Add("e");
+                if (!typology.Contains("n")) typology.Add("n");
+                if (!typology.Contains("l")) typology.Add("l");
+
+                for (double x = x0; x < xk; x += h)
                 {
-                    //Проверка условий
-                    if (!typology.Contains("d")) typology.Add("d");
-                    if (!typology.Contains("e")) typology.Add("e");
-                    if (!typology.Contains("n")) typology.Add("n");
-                    if (!typology.Contains("l")) typology.Add("l");
+                    //Проверка принадлежности икс классу эквивалентности
+                    if ((x > x0) && (x < xk))
+                    {
+                        if (!typology.Contains("d")) typology.Add("d");
+                    }
 
                     //Конкретное это условие - true
                     if (!typology.Contains("l")) typology.Add("l");
@@ -79,11 +111,6 @@ namespace TestingLabX.Controllers
                     if (!typology.Contains("m")) typology.Add("m");
                 }
             }
-
-            if (!typology.Contains("b")) typology.Add("b"); //Проверка условия цикла
-
-            //Выход из Cycle
-            if (!typology.Contains("c")) typology.Add("c");
         }
 
         //Метод, с прмощью которого производится тестирование
@@ -203,7 +230,7 @@ namespace TestingLabX.Controllers
                             TestResult = testResult[i],
                             Typology = typologyList[i]
                         }
-                        );
+                    );
                 }
 
                 return Ok(rows);
