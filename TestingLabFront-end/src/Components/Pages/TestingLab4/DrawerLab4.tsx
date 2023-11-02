@@ -131,7 +131,7 @@ export default function PersistentDrawerLeft() {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    <MyLink href='/TestingLab3/Problem'>
+                    <MyLink href='/TestingLab4/Problem'>
                         <ListItem>
                             <ListItemButton>
                                 <InboxIcon sx={{ marginRight: '20px' }} />
@@ -139,15 +139,15 @@ export default function PersistentDrawerLeft() {
                             </ListItemButton>
                         </ListItem>
                     </MyLink>
-                    <MyLink href='/TestingLab3/Graph'>
+                    <MyLink href='/TestingLab4/DecisionTree'>
                         <ListItem>
                             <ListItemButton>
                                 <MailIcon sx={{ marginRight: '20px' }} />
-                                <MyTypography>Control Flow Graph of the Program</MyTypography>
+                                <MyTypography>Decision Tree</MyTypography>
                             </ListItemButton>
                         </ListItem>
                     </MyLink>
-                    <MyLink href='/TestingLab3/Testing'>
+                    <MyLink href='/TestingLab4/Testing'>
                         <ListItem>
                             <ListItemButton>
                                 <InboxIcon sx={{ marginRight: '20px' }} />

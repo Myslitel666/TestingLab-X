@@ -25,7 +25,7 @@ function App() {
                     <Route path="TestingLab3/Testing" element={<TestingLab3 />} />
 
                     <Route path="TestingLab4/Problem" element={<ProblemLab4 />} />
-                    <Route path="TestingLab3/DecisionTree" element={<DecisionTree />} />
+                    <Route path="TestingLab4/DecisionTree" element={<DecisionTree />} />
                     <Route path="TestingLab4/Testing" element={<TestingLab4 />} />
                 </Routes>
             </Router>
