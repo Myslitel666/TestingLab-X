@@ -10,7 +10,7 @@ import DrawerLab4 from '../TestingLab4/DrawerLab4'
 import LabsMenu from '../../Common/Header/LabsMenu';
 
 //CSS Import
-import '../TestingLab4/DecisionTree.css'
+import '../TestingLab5/Cause-effectDiagram.css'
 
 const Graph: React.FC = () => {
     const theme = useTheme();
