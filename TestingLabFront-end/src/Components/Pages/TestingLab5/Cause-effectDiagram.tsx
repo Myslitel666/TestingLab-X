@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material/styles';
 
 //MyComponents Import
 import MyBox from '../../Common/MyBox';
-import DrawerLab4 from '../TestingLab4/DrawerLab4'
+import DrawerLab5 from '../TestingLab5/DrawerLab5'
 import LabsMenu from '../../Common/Header/LabsMenu';
 
 //CSS Import
@@ -18,7 +18,7 @@ const Graph: React.FC = () => {
 
     return (
         <>
-            <DrawerLab4 />
+            <DrawerLab5 />
             <LabsMenu />
             <Typography variant="h4"
                 sx={{'textAlign': 'center',

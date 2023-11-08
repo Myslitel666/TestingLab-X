@@ -87,12 +87,6 @@ export default function PersistentDrawerLeft() {
         setOpen(false);
     };
 
-    const links = [
-        <MyLink key="problem" underline="none" color = "white" href='/TestingLab3/Problem'></MyLink>,
-        <MyLink key="graph" underline="none" color="white" href='/TestingLab3/Graph'></MyLink>,
-        <MyLink key="testing" underline="none" color="white" href='/TestingLab3/Testing'></MyLink>
-    ];
-
     return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CssBaseline />

@@ -5,7 +5,7 @@ import React from 'react';
 import { useTheme } from '@mui/material/styles';
 
 //MyComponents Import
-import DrawerLab4 from '../TestingLab4/DrawerLab4'
+import DrawerLab5 from '../TestingLab5/DrawerLab5'
 import LabsMenu from '../../Common/Header/LabsMenu';
 
 const Problem: React.FC = () => {
@@ -14,7 +14,7 @@ const Problem: React.FC = () => {
 
     return (
         <>
-            <DrawerLab4 />
+            <DrawerLab5 />
             <LabsMenu />
             <Typography variant="h4"
                 sx={{'textAlign': 'center',

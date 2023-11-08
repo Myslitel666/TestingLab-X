@@ -87,12 +87,6 @@ export default function PersistentDrawerLeft() {
         setOpen(false);
     };
 
-    const links = [
-        <MyLink key="problem" underline="none" color = "white" href='/TestingLab3/Problem'></MyLink>,
-        <MyLink key="graph" underline="none" color="white" href='/TestingLab3/Graph'></MyLink>,
-        <MyLink key="testing" underline="none" color="white" href='/TestingLab3/Testing'></MyLink>
-    ];
-
     return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <CssBaseline />
@@ -131,7 +125,7 @@ export default function PersistentDrawerLeft() {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    <MyLink href='/TestingLab4/Problem'>
+                    <MyLink href='/TestingLab5/Problem'>
                         <ListItem>
                             <ListItemButton>
                                 <InboxIcon sx={{ marginRight: '20px' }} />
@@ -139,15 +133,15 @@ export default function PersistentDrawerLeft() {
                             </ListItemButton>
                         </ListItem>
                     </MyLink>
-                    <MyLink href='/TestingLab4/DecisionTree'>
+                    <MyLink href='/TestingLab5/Cause-effectDiagram'>
                         <ListItem>
                             <ListItemButton>
                                 <MailIcon sx={{ marginRight: '20px' }} />
-                                <MyTypography>Decision Tree</MyTypography>
+                                <MyTypography>Cause and Effect Diagram</MyTypography>
                             </ListItemButton>
                         </ListItem>
                     </MyLink>
-                    <MyLink href='/TestingLab4/Testing'>
+                    <MyLink href='/TestingLab5/Testing'>
                         <ListItem>
                             <ListItemButton>
                                 <InboxIcon sx={{ marginRight: '20px' }} />

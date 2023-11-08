@@ -39,7 +39,7 @@ function App() {
 
                     //TestingLab5
                     <Route path="TestingLab5/Problem" element={<ProblemLab5 />} />
-                    <Route path="TestingLab5/DecisionTree" element={<CauseEffectDiagram />} />
+                    <Route path="TestingLab5/Cause-effectDiagram" element={<CauseEffectDiagram />} />
                     <Route path="TestingLab5/Testing" element={<TestingLab5 />} />
                 </Routes>
             </Router>
