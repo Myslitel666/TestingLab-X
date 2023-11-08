@@ -12,11 +12,16 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\build</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="public\images\products\" />
     <Folder Include="src\Components\Shared\" />
     <Folder Include="src\Components\Layout\" />
     <Folder Include="src\Services\" />
     <Folder Include="src\Styles\" />
     <Folder Include="src\Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptConfiguration Remove="public\images\products\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="public\images\products\**" />
   </ItemGroup>
 </Project>

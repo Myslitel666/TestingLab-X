@@ -64,6 +64,5 @@ export default function HeaderContent() {
                 Sign up
                 </MyButton>
         </div>
-
     );
 }
