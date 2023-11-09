@@ -26,7 +26,7 @@ const Graph: React.FC = () => {
                     transition: 'color 1s ease',
                     marginTop: '2%'
             }}>
-                Control Flow Graph of the Program
+                Decision Tree of the Program
             </Typography>
             <Grid container spacing={6} sx={{
                 paddingTop: '3%',

@@ -11,6 +11,7 @@ import LabsMenu from '../../Common/Header/LabsMenu';
 
 //CSS Import
 import '../TestingLab5/Cause-effectDiagram.css'
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 const CaseEffectDiagram: React.FC = () => {
     const theme = useTheme();
@@ -26,7 +27,7 @@ const CaseEffectDiagram: React.FC = () => {
                     transition: 'color 1s ease',
                     marginTop: '2%'
             }}>
-                Control Flow Graph of the Program
+                Cause and Effect Diagram of the Program
             </Typography>
             <Grid container spacing={6} sx={{
                 paddingTop: '3%',
@@ -42,7 +43,7 @@ const CaseEffectDiagram: React.FC = () => {
                             <Grid justifyContent="center"
                                   container spacing={0}>
                             <img
-                                    src='/images/Cause-effectDiagram.png'
+                                src='/images/Cause-effectDiagram.png'
                                 alt='Formula'
                                 style={{
                                     maxWidth: '92%',
@@ -51,7 +52,7 @@ const CaseEffectDiagram: React.FC = () => {
                                     borderRadius: '8px',
                                     marginTop: '5px',
                                 }}
-                                />
+                            />
                             </Grid>
                         </Typography>
                     </MyBox>
@@ -174,6 +175,24 @@ const CaseEffectDiagram: React.FC = () => {
                         </Typography>
                     </MyBox>
                 </Grid>
+            </Grid>
+
+            <Grid justifyContent="center"
+                container spacing={0}>
+                <Box width='50%' sx={{ borderColor: 'red', margin: 0} }>
+                <img
+                    src='/images/Desicion Table.png'
+                    alt='Formula'
+                    style={{
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'cover',
+                        borderRadius: '8px',
+                        marginTop: '5px',
+                        marginBottom: '50px',
+                    }}
+                    />
+                </Box>
             </Grid>
         </>
     );
