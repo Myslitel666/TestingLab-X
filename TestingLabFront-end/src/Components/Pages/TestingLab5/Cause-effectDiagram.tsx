@@ -44,10 +44,10 @@ const CaseEffectDiagram: React.FC = () => {
                                   container spacing={0}>
                             <img
                                 src='/images/Cause-effectDiagram.png'
-                                alt='Formula'
+                                alt='Cause and effectDiagram'
                                 style={{
-                                    maxWidth: '92%',
-                                    maxHeight: '92%',
+                                    maxWidth: '89%',
+                                    maxHeight: '89%',
                                     objectFit: 'cover',
                                     borderRadius: '8px',
                                     marginTop: '5px',
@@ -125,7 +125,7 @@ const CaseEffectDiagram: React.FC = () => {
                             действий.
                         </Typography>
 
-                        <img style={{ height: '65px' }}/>
+                        <img style={{ height: '75px' }}/>
                     </MyBox>
                 </Grid>
             </Grid>
@@ -179,20 +179,18 @@ const CaseEffectDiagram: React.FC = () => {
 
             <Grid justifyContent="center"
                 container spacing={0}>
-                <Box width='50%' sx={{ borderColor: 'red', margin: 0} }>
                 <img
                     src='/images/Desicion Table.png'
                     alt='Formula'
                     style={{
-                        maxWidth: '100%',
-                        maxHeight: '100%',
+                        maxWidth: '50%',
+                        maxHeight: '50%',
                         objectFit: 'cover',
                         borderRadius: '8px',
                         marginTop: '5px',
                         marginBottom: '50px',
                     }}
                     />
-                </Box>
             </Grid>
         </>
     );
