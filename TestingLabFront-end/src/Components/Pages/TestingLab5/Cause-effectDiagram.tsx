@@ -12,7 +12,7 @@ import LabsMenu from '../../Common/Header/LabsMenu';
 //CSS Import
 import '../TestingLab5/Cause-effectDiagram.css'
 
-const Graph: React.FC = () => {
+const CaseEffectDiagram: React.FC = () => {
     const theme = useTheme();
     const PrimaryMainColor = theme.palette.primary.main;
 
@@ -194,4 +194,4 @@ const Graph: React.FC = () => {
     );
 };
 
-export default Graph;
+export default CaseEffectDiagram;
