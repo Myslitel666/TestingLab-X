@@ -42,11 +42,11 @@ const CaseEffectDiagram: React.FC = () => {
                             <Grid justifyContent="center"
                                   container spacing={0}>
                             <img
-                                src='/images/DecisionTree.png'
+                                    src='/images/Cause-effectDiagram.png'
                                 alt='Formula'
                                 style={{
-                                    maxWidth: '97%',
-                                    maxHeight: '97%',
+                                    maxWidth: '92%',
+                                    maxHeight: '92%',
                                     objectFit: 'cover',
                                     borderRadius: '8px',
                                     marginTop: '5px',
@@ -68,13 +68,9 @@ const CaseEffectDiagram: React.FC = () => {
                                   marginLeft: '20px',
                                   color: `${PrimaryMainColor}`,
                                   transition: 'color 1s ease'
-                            }}>Класс эквивалентности в тестировании </span>
-                            - это набор тестовых случаев, которые имеют
-                            одинаковую логику и ожидаемый результат.
-                            Мы используем классы эквивалентности для
-                            представления группы входных данных или
-                            состояний программы, которые должны 
-                            обрабатываться одинаково.
+                            }}>Функциональное тестирование </span>
+                            - процесс обнаружения ошибок в функциях программы на
+                            всей области определения.
                         </Typography>
 
                         <Typography sx={{
@@ -111,7 +107,24 @@ const CaseEffectDiagram: React.FC = () => {
                             граничных значений дополняет метод классов эквивалентности.
                         </Typography>
 
-                        <img style={{ height: '63px' }}/>
+                        <Typography sx={{
+                            marginTop: '10px',
+                            marginLeft: '10px',
+                            marginRight: '10px',
+                            marginBottom: '10px'
+                        }}>
+                            <span style={{
+                                marginLeft: '20px',
+                                color: `${PrimaryMainColor}`,
+                                transition: 'color 1s ease'
+                            }}>Метод функциональных диаграмм </span>
+                            – метод функционального тестирования программного обеспечения,
+                            основанный на проектировании тестовых вариантов, использующих
+                            формальную запись логических условий и соответствующих
+                            действий.
+                        </Typography>
+
+                        <img style={{ height: '65px' }}/>
                     </MyBox>
                 </Grid>
             </Grid>
@@ -134,24 +147,10 @@ const CaseEffectDiagram: React.FC = () => {
                                 marginLeft: '20px',
                                 color: `${PrimaryMainColor}`,
                                 transition: 'color 1s ease'
-                            }}>White Box Testing </span>
-                            - метод тестирования программного обеспечения, который
-                            предполагает, что внутренняя структура/устройство/
-                            реализация системы известны тестировщику.
-                            Подбор входных значений и процедура тестирования также
-                            основыввается на знании кода.
-                        </Typography>
-                        <Typography sx={{
-                            marginTop: '10px',
-                            marginLeft: '10px',
-                            marginRight: '10px',
-                            marginBottom: '10px'
-                        }}>
-                            <span style={{
-                                marginLeft: '20px',
-                                transition: 'color 1s ease'
-                            }}>При этом данный метод подразумевает, что все операторы,
-                                переходы, решения должны быть покрыты.</span>
+                            }}>Black Box Testing </span>
+                            - стратегия (метод) тестирования функционального поведения
+                            объекта (программы, системы) с точки зрения внешнего мира,
+                            при котором не используется знание о внутреннем устройстве (коде) тестируемого объекта.
                         </Typography>
                     </MyBox>
                 </Grid>
@@ -168,24 +167,10 @@ const CaseEffectDiagram: React.FC = () => {
                                 marginLeft: '20px',
                                 color: `${PrimaryMainColor}`,
                                 transition: 'color 1s ease'
-                            }}>White Box Testing </span>
-                            - метод тестирования программного обеспечения, который
-                            предполагает, что внутренняя структура/устройство/
-                            реализация системы известны тестировщику.
-                            Подбор входных значений и процедура тестирования также
-                            основыввается на знании кода.
-                        </Typography>
-                        <Typography sx={{
-                            marginTop: '10px',
-                            marginLeft: '10px',
-                            marginRight: '10px',
-                            marginBottom: '10px'
-                        }}>
-                            <span style={{
-                                marginLeft: '20px',
-                                transition: 'color 1s ease'
-                            }}>При этом данный метод подразумевает, что все операторы,
-                            переходы, решения должны быть покрыты.</span>
+                            }}>Black Box Testing </span>
+                            - стратегия (метод) тестирования функционального поведения
+                            объекта (программы, системы) с точки зрения внешнего мира,
+                            при котором не используется знание о внутреннем устройстве (коде) тестируемого объекта.
                         </Typography>
                     </MyBox>
                 </Grid>
