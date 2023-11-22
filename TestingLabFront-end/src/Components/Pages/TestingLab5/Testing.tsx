@@ -12,9 +12,8 @@ import LabsMenu from '../../Common/Header/LabsMenu';
 const Testing: React.FC = () => {
     //TextFields
     const [x0, setX0] = useState('0'); // Начальное значение для X0 coefficient
-    const [xk, setXk] = useState('10'); // Начальное значение для Xk coefficient
+    const [xk, setXk] = useState('2'); // Начальное значение для Xk coefficient
     const [step, setStep] = useState('1'); // Начальное значение для h (Step)
-    const [testCases, setTestCases] = useState('10000'); // Начальное значение для Test cases
 
     //Table Fields
     const columns: GridColDef[] = [
@@ -46,13 +45,6 @@ const Testing: React.FC = () => {
             align: 'center',
             headerAlign: 'center'
         },
-        {
-            field: 'typology',
-            headerName: 'Typology',
-            width: 160,
-            align: 'center',
-            headerAlign: 'center'
-        },
     ];
 
     const [rows, setRows] = useState([]);
@@ -60,8 +52,8 @@ const Testing: React.FC = () => {
     const apiUrl = process.env.REACT_APP_API_URL as string;
 
     async function fetchData() {
-        try {
-            const response = await fetch(`${apiUrl}/api/testingLab4`, {
+        //try {
+            const response = await fetch(`${apiUrl}/api/testingLab5`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,16 +61,17 @@ const Testing: React.FC = () => {
                 body: JSON.stringify({
                     x0: x0,
                     xk: xk,
-                    step: step,
-                    testCases: testCases,
+                    step: step
                 }),
             });
 
             const data = await response.json();
             setRows(data);
-        } catch (error) {
-            console.error('Ошибка при отправке данных:', error);
-        }
+
+            console.log(data);
+        //} catch (error) {
+            //console.error('Ошибка при отправке данных:', error);
+        //}
     };
 
     const handleCalculateClick = () => {
@@ -90,7 +83,6 @@ const Testing: React.FC = () => {
         setX0(``);
         setXk(``);
         setStep(``);
-        setTestCases(``);
 
         setRows([]);
     };
@@ -101,8 +93,8 @@ const Testing: React.FC = () => {
             <LabsMenu />
 
             {/*Input parameters*/}
-            <Grid container spacing={2} alignItems="center" marginTop="10px">
-                <Grid item marginLeft="40px">
+            <Grid container spacing={2} alignItems="center" justifyContent="center" marginTop="10px">
+                <Grid item>
                     <Typography>X0 coefficient:</Typography>
                 </Grid>
                 <Grid item>
@@ -120,17 +112,11 @@ const Testing: React.FC = () => {
                 <Grid item>
                     <TextField label="Input 3" variant="outlined" value={step} onChange={(e) => setStep(e.target.value)} />
                 </Grid>
-                <Grid item>
-                    <Typography>Test cases:</Typography>
-                </Grid>
-                <Grid item>
-                    <TextField label="Input 4" variant="outlined" value={testCases} onChange={(e) => setTestCases(e.target.value)} />
-                </Grid>
             </Grid>
             {/*Start button*/}
             <Grid justifyContent="center"
                 container spacing={1}
-                sx={{ marginTop: '25px' }}
+                sx={{ marginTop: '50px' }}
             >
                 <Grid item xs={2} md={1}
                 >
@@ -153,10 +139,10 @@ const Testing: React.FC = () => {
             </Grid>
             <Grid container spacing={1}
                   justifyContent="center"
-                  marginTop="25px"
+                  marginTop="50px"
             >
                 <div style={{
-                    height: '400px',
+                    height: '319px',
                     width: '675'
                 }}>
                     <DataGrid 
