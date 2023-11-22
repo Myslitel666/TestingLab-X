@@ -19,6 +19,10 @@ import ProblemLab5 from './Components/Pages/TestingLab5/Problem';
 import CauseEffectDiagram from './Components/Pages/TestingLab5/Cause-effectDiagram';
 import TestingLab5 from './Components/Pages/TestingLab5/Testing';
 
+import ProblemLab6 from './Components/Pages/TestingLab6/Problem';
+import CauseEffectDiagram6 from './Components/Pages/TestingLab6/Cause-effectDiagram';
+import TestingLab6 from './Components/Pages/TestingLab6/Testing';
+
 function App() {
     return (
         <ColorModeProvider>
@@ -41,6 +45,11 @@ function App() {
                     <Route path="TestingLab5/Problem" element={<ProblemLab5 />} />
                     <Route path="TestingLab5/Cause-effectDiagram" element={<CauseEffectDiagram />} />
                     <Route path="TestingLab5/Testing" element={<TestingLab5 />} />
+
+                    //TestingLab6
+                    <Route path="TestingLab6/Problem" element={<ProblemLab6 />} />
+                    <Route path="TestingLab6/Cause-effectDiagram" element={<CauseEffectDiagram6 />} />
+                    <Route path="TestingLab6/Testing" element={<TestingLab6 />} />
                 </Routes>
             </Router>
         </ColorModeProvider>
