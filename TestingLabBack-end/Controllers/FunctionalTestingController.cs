@@ -126,9 +126,9 @@ namespace TestingLabX.Controllers
                         {
                             functionalTestingResult.TestResult = "Passed";
                         }
-                    }
 
-                    functionalTestingList.Add(functionalTestingResult);
+                        functionalTestingList.Add(functionalTestingResult);
+                    }
                 }
                 else if (a < 0 && b >= 0)
                 {
@@ -264,9 +264,9 @@ namespace TestingLabX.Controllers
                 double step = double.Parse(request.Step);
 
                 //Производим работу методов
-                var functionalTestingResult = FunctionalTesting.testingFunc(x0, xk, step);
+                var functionalTestingList = FunctionalTesting.testingFunc(x0, xk, step);
 
-                return Ok(functionalTestingResult);
+                return Ok(functionalTestingList);
             }
             catch (Exception ex)
             {
