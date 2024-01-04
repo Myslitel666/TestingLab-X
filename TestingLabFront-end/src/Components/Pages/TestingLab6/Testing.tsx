@@ -6,7 +6,7 @@ import MyButton from '../../Common/MyButton';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 //MyComponents Import
-import DrawerLab5 from '../TestingLab5/DrawerLab5'
+import DrawerLab6 from '../TestingLab6/DrawerLab6'
 import LabsMenu from '../../Common/Header/LabsMenu';
 
 const Testing: React.FC = () => {
@@ -89,7 +89,7 @@ const Testing: React.FC = () => {
 
     return (
         <>
-            <DrawerLab5 />
+            <DrawerLab6 />
             <LabsMenu />
 
             {/*Input parameters*/}

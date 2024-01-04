@@ -20,7 +20,7 @@ import CauseEffectDiagram from './Components/Pages/TestingLab5/Cause-effectDiagr
 import TestingLab5 from './Components/Pages/TestingLab5/Testing';
 
 import ProblemLab6 from './Components/Pages/TestingLab6/Problem';
-import CauseEffectDiagram6 from './Components/Pages/TestingLab6/Cause-effectDiagram';
+import ModuleDiagram from './Components/Pages/TestingLab6/ModuleDiagram';
 import TestingLab6 from './Components/Pages/TestingLab6/Testing';
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
 
                     //TestingLab6
                     <Route path="TestingLab6/Problem" element={<ProblemLab6 />} />
-                    <Route path="TestingLab6/Cause-effectDiagram" element={<CauseEffectDiagram6 />} />
+                    <Route path="TestingLab6/ModuleDiagram" element={<ModuleDiagram />} />
                     <Route path="TestingLab6/Testing" element={<TestingLab6 />} />
                 </Routes>
             </Router>

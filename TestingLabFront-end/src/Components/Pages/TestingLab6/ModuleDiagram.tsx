@@ -6,11 +6,11 @@ import { useTheme } from '@mui/material/styles';
 
 //MyComponents Import
 import MyBox from '../../Common/MyBox';
-import DrawerLab5 from '../TestingLab5/DrawerLab5'
+import DrawerLab6 from '../TestingLab6/DrawerLab6'
 import LabsMenu from '../../Common/Header/LabsMenu';
 
 //CSS Import
-import '../TestingLab5/Cause-effectDiagram.css'
+import '../TestingLab6/ModuleDiagram.css'
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 const CaseEffectDiagram: React.FC = () => {
@@ -19,7 +19,7 @@ const CaseEffectDiagram: React.FC = () => {
 
     return (
         <>
-            <DrawerLab5 />
+            <DrawerLab6 />
             <LabsMenu />
             <Typography variant="h4"
                 sx={{'textAlign': 'center',
@@ -27,7 +27,7 @@ const CaseEffectDiagram: React.FC = () => {
                     transition: 'color 1s ease',
                     marginTop: '2%'
             }}>
-                Cause and Effect Diagram of the Program
+                Module Diagram
             </Typography>
             <Grid container spacing={6} sx={{
                 paddingTop: '3%',
@@ -43,7 +43,7 @@ const CaseEffectDiagram: React.FC = () => {
                             <Grid justifyContent="center"
                                   container spacing={0}>
                             <img
-                                src='/images/Cause-effectDiagram.png'
+                                src='/images/ModuleDiagram.png'
                                 alt='Cause and effectDiagram'
                                 style={{
                                     maxWidth: '89%',
@@ -58,7 +58,7 @@ const CaseEffectDiagram: React.FC = () => {
                     </MyBox>
                 </Grid>
                 <Grid item xs={6} md={6}>
-                    <MyBox>
+                    <MyBox minHeight = '485px'>
                         <Typography sx={{
                             marginTop: '10px',
                             marginLeft: '10px',
@@ -69,9 +69,9 @@ const CaseEffectDiagram: React.FC = () => {
                                   marginLeft: '20px',
                                   color: `${PrimaryMainColor}`,
                                   transition: 'color 1s ease'
-                            }}>Функциональное тестирование </span>
-                            - процесс обнаружения ошибок в функциях программы на
-                            всей области определения.
+                            }}>Интеграционное тестирование </span>
+                            - тестирование программного обеспечения,
+                            на этапе сборки модулей в единый комплекс.
                         </Typography>
 
                         <Typography sx={{
@@ -84,10 +84,10 @@ const CaseEffectDiagram: React.FC = () => {
                                 marginLeft: '20px',
                                 color: `${PrimaryMainColor}`,
                                 transition: 'color 1s ease'
-                            }}>Эквивалентное разбиение </span>
-                            - метод функционального тестирования программы, основанный
-                            на разбиении области определения исходных данных функции
-                            на классы эквивалентности.
+                            }}>Модуль-заглушка </span>
+                            - программный модуль, обладающий тем же
+                            интерфейсом, что и замещаемый модуль
+                            нижележащего уровня.
                         </Typography>
 
                         <Typography sx={{
@@ -100,12 +100,9 @@ const CaseEffectDiagram: React.FC = () => {
                                 marginLeft: '20px',
                                 color: `${PrimaryMainColor}`,
                                 transition: 'color 1s ease'
-                            }}>Анализ граничных значений </span>
-                            – метод функционального тестирования программного
-                            обеспечения, основанный на создании тестовых вариантов,
-                            анализирующих граничные значения. Обнаружение ошибок
-                            производится на границах области ввода данных. Анализ
-                            граничных значений дополняет метод классов эквивалентности.
+                            }}>Монолитная сборка модулей </span>
+                            – одновременное объединение модулей
+                            в тестируемый комплекс
                         </Typography>
 
                         <Typography sx={{
@@ -118,14 +115,10 @@ const CaseEffectDiagram: React.FC = () => {
                                 marginLeft: '20px',
                                 color: `${PrimaryMainColor}`,
                                 transition: 'color 1s ease'
-                            }}>Метод функциональных диаграмм </span>
-                            – метод функционального тестирования программного обеспечения,
-                            основанный на проектировании тестовых вариантов, использующих
-                            формальную запись логических условий и соответствующих
-                            действий.
+                            }}>Пошаговая сборка модулей </span>
+                            – пошаговое (помодульное) наращивание комплекса программ
+                            с пошаговым тестированием собираемого комплекса.
                         </Typography>
-
-                        <img style={{ height: '75px' }}/>
                     </MyBox>
                 </Grid>
             </Grid>
@@ -175,22 +168,6 @@ const CaseEffectDiagram: React.FC = () => {
                         </Typography>
                     </MyBox>
                 </Grid>
-            </Grid>
-
-            <Grid justifyContent="center"
-                container spacing={0}>
-                <img
-                    src='/images/Desicion Table.png'
-                    alt='Formula'
-                    style={{
-                        maxWidth: '50%',
-                        maxHeight: '50%',
-                        objectFit: 'cover',
-                        borderRadius: '8px',
-                        marginTop: '5px',
-                        marginBottom: '50px',
-                    }}
-                    />
             </Grid>
         </>
     );

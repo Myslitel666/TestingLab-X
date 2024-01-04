@@ -125,7 +125,7 @@ export default function PersistentDrawerLeft() {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    <MyLink href='/TestingLab5/Problem'>
+                    <MyLink href='/TestingLab6/Problem'>
                         <ListItem>
                             <ListItemButton>
                                 <InboxIcon sx={{ marginRight: '20px' }} />
@@ -133,7 +133,7 @@ export default function PersistentDrawerLeft() {
                             </ListItemButton>
                         </ListItem>
                     </MyLink>
-                    <MyLink href='/TestingLab5/Cause-effectDiagram'>
+                    <MyLink href='/TestingLab6/ModuleDiagram'>
                         <ListItem>
                             <ListItemButton>
                                 <MailIcon sx={{ marginRight: '20px' }} />
@@ -141,7 +141,7 @@ export default function PersistentDrawerLeft() {
                             </ListItemButton>
                         </ListItem>
                     </MyLink>
-                    <MyLink href='/TestingLab5/Testing'>
+                    <MyLink href='/TestingLab6/Testing'>
                         <ListItem>
                             <ListItemButton>
                                 <InboxIcon sx={{ marginRight: '20px' }} />
