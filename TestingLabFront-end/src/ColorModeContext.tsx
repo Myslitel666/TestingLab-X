@@ -43,6 +43,9 @@ export const ColorModeProvider: React.FC<ColorModeProviderProps> = ({ children }
                         primary: '#FFFFFF', // Устанавливаем цвет основного текста в темной теме
                         secondary: '#CCCCCC', // Устанавливаем цвет второстепенного текста в темной теме (например, для подзаголовков и т. д.)
                     },
+                    background: {
+                        default: '#060606'
+                    },
                 },
             }),
         [MyTheme]

@@ -30,7 +30,7 @@ namespace TestingLabX.Controllers
             }
             catch (Exception ex)
             {
-                    //Логируйте ошибку или верните ошибку сервера
+                //Лог ошибки или возврат ошибки сервера
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
@@ -42,14 +42,14 @@ namespace TestingLabX.Controllers
             {
                 var popularProducts = await _dbContext.DescriptionLabs
                     .OrderBy(p => p.LabNumber)
-                    .Take(6) // Получить 6 самых популярных товаров
+                    .Take(6) // Получить 6 лабораторных работ в порядке их приоритета
                     .ToListAsync();
 
                 return Ok(popularProducts);
             }
             catch (Exception ex)
             {
-                    //Логируйте ошибку или верните ошибку сервера
+                //Лог ошибки или возврат ошибки сервера
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }

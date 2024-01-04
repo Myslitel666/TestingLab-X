@@ -3,6 +3,7 @@ import React from 'react';
 
 //MUI Import
 import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box'
 
 //MyComponents Import
 import DrawerLab5 from '../TestingLab5/DrawerLab5'
@@ -37,7 +38,7 @@ const Problem: React.FC = () => {
                 <span>
                     закрепить теоретические знания и получить практические
                     навыки в разработке программы тестирования методом
-                    функциональных диаграмм.
+                    нисходящего тестирования.
                 </span>
             </Typography>
 
@@ -70,36 +71,35 @@ const Problem: React.FC = () => {
                     Ключевые термины:
                 </span>
                 <span>
-                    диаграмма причинно-следственных связей, функции,
-                    ограничения, таблица решений с ограниченным входом,
-                    причина, следствие.
+                    интеграционное тестирование, модуль-заглушка, категории заглушек,
+                    монолитная сборка модулей, пошаговая сборка модулей.
                 </span>
             </Typography>
-
-            <Typography variant="h4"
-                sx={{'textAlign': 'center',
-                color: `${PrimaryMainColor}`,
-                    transition: 'color 1s ease',
-                    marginTop: '20px'
-            }}>
-                Variant N
-            </Typography>
-
-            <Typography sx={{
-                'textAlign': 'center',
-            }}>
-            <img
-                src='/images/expressions/FormulaTesting.png'
-                alt='Formula'
-                style={{
-                    maxWidth: '100%',
-                    maxHeight: '200px',
-                    objectFit: 'cover',
-                    borderRadius: '8px',
-                    marginTop: '5px'
-                }}
-                />
-            </Typography>
+            <Box
+                textAlign = 'center'
+            >
+                <Typography variant="h4"
+                    sx={{
+                        textAlign: 'center',
+                        color: `${PrimaryMainColor}`,
+                        transition: 'color 1s ease',
+                        marginTop: '20px'
+                    }}>
+                    Variant N
+                </Typography>
+                <Typography sx={{ marginLeft: '30px', marginRight: '30px', marginTop: '10px' }}>
+                    В одномерном динамическом массиве, состоящем из целых чисел:
+                </Typography>
+                <Typography sx={{ marginLeft: '30px', marginRight: '30px', marginTop: '10px' }}>
+                    1) Вычислить сумму всех элементов
+                </Typography>
+                <Typography sx={{ marginLeft: '30px', marginRight: '30px', marginTop: '10px' }}>
+                    2) Определить кол-во элементов в массиве
+                </Typography>
+                <Typography sx={{ marginLeft: '30px', marginRight: '30px', marginTop: '10px' }}>
+                    3) Вычислить среднее арифметическое значение всех чисел в массиве
+                </Typography>
+            </Box>
         </>
     );
 };
