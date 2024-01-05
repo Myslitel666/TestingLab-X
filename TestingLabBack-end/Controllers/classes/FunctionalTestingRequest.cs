@@ -1,11 +1,9 @@
 ﻿namespace TestingLabX.Controllers.classes
 {
-    public class FunctionalTestingResult
+    public class FunctionalTestingRequest
     {
-        public int Id { get; set; }
-        public int TestNumber { get; set; }
-        public string ExpectedResult { get; set; }
-        public string ActualResult { get; set; }
-        public string TestResult { get; set; }
+        public string X0 { get; set; }
+        public string Xk { get; set; }
+        public string Step { get; set; }
     }
 }

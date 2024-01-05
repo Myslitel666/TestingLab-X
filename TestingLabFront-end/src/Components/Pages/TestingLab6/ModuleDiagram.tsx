@@ -37,28 +37,24 @@ const CaseEffectDiagram: React.FC = () => {
             }}>
                 <Grid item xs={6} md={6}>
                     <MyBox>
-                        <Typography sx={{
-
-                        }}>
-                            <Grid justifyContent="center"
-                                  container spacing={0}>
-                            <img
-                                src='/images/ModuleDiagram.png'
-                                alt='Cause and effectDiagram'
-                                style={{
-                                    maxWidth: '89%',
-                                    maxHeight: '89%',
-                                    objectFit: 'cover',
-                                    borderRadius: '8px',
-                                    marginTop: '5px',
-                                }}
-                            />
-                            </Grid>
-                        </Typography>
+                        <Grid justifyContent="center"
+                                container spacing={0}>
+                        <img
+                            src='/images/ModuleDiagram.png'
+                            alt='Cause and effectDiagram'
+                            style={{
+                                maxWidth: '89%',
+                                maxHeight: '89%',
+                                objectFit: 'cover',
+                                borderRadius: '8px',
+                                marginTop: '5px',
+                            }}
+                        />
+                        </Grid>
                     </MyBox>
                 </Grid>
                 <Grid item xs={6} md={6}>
-                    <MyBox minHeight = '485px'>
+                    <MyBox minHeight='485px'>
                         <Typography sx={{
                             marginTop: '10px',
                             marginLeft: '10px',

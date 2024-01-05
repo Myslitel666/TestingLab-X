@@ -4,6 +4,8 @@
 import { Grid, TextField, Typography, Box } from '@mui/material';
 import MyButton from '../../Common/MyButton';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 //MyComponents Import
 import DrawerLab6 from '../TestingLab6/DrawerLab6'
@@ -11,9 +13,11 @@ import LabsMenu from '../../Common/Header/LabsMenu';
 
 const Testing: React.FC = () => {
     //TextFields
-    const [x0, setX0] = useState('1'); // Начальное значение для X0 coefficient
-    const [xk, setXk] = useState('5'); // Начальное значение для Xk coefficient
-    const [step, setStep] = useState('1'); // Начальное значение для h (Step)
+    const [sequenceOfNumbers, setSequenceOfNumbers] = useState('32 15 8 71 44 56 22 48 79 81 34 55 78 90 100 34 21 23 14 139 20 1 200'); // Начальное значение для X0 coefficient
+    const [testCases, setTestCases] = useState('100'); // Начальное значение для Xk coefficient
+    const [module1, setModule1] = useState(true);
+    const [module2, setModule2] = useState(false);
+    const [module3, setModule3] = useState(false);
 
     //Table Fields
     const columns: GridColDef[] = [
@@ -25,23 +29,30 @@ const Testing: React.FC = () => {
             headerAlign: 'center'
         },
         {
-            field: 'expectedResult',
-            headerName: 'Expected Result',
-            width: 135,
+            field: 'sum',
+            headerName: 'Sum',
+            width: 200,
             align: 'center',
             headerAlign: 'center'
         },
         {
-            field: 'actualResult',
-            headerName: 'Actual Result',
-            width: 135,
+            field: 'numberOfElements',
+            headerName: 'Number of elements',
+            width: 200,
+            align: 'center',
+            headerAlign: 'center'
+        },
+        {
+            field: 'theArithmeticMean',
+            headerName: 'The arithmetic mean',
+            width: 200,
             align: 'center',
             headerAlign: 'center'
         },
         {
             field: 'testResult',
             headerName: 'Test Result',
-            width: 135,
+            width: 200,
             align: 'center',
             headerAlign: 'center'
         },
@@ -52,16 +63,17 @@ const Testing: React.FC = () => {
     const apiUrl = process.env.REACT_APP_API_URL as string;
 
     async function fetchData() {
-        //try {
-            const response = await fetch(`${apiUrl}/api/testingLab5`, {
+            const response = await fetch(`${apiUrl}/api/testingLab6`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    x0: x0,
-                    xk: xk,
-                    step: step
+                    sequenceOfNumbers: sequenceOfNumbers,
+                    testCases: testCases,
+                    module1: module1,
+                    module2: module2,
+                    module3: module3,
                 }),
             });
 
@@ -69,9 +81,6 @@ const Testing: React.FC = () => {
             setRows(data);
 
             console.log(data);
-        //} catch (error) {
-            //console.error('Ошибка при отправке данных:', error);
-        //}
     };
 
     const handleCalculateClick = () => {
@@ -80,9 +89,8 @@ const Testing: React.FC = () => {
 
     // Функция для обновления текста по нажатию кнопки
     const clearButtonClick = () => {
-        setX0(``);
-        setXk(``);
-        setStep(``);
+        setSequenceOfNumbers(``);
+        setTestCases(``);
 
         setRows([]);
     };
@@ -91,32 +99,42 @@ const Testing: React.FC = () => {
         <>
             <DrawerLab6 />
             <LabsMenu />
-
-            {/*Input parameters*/}
-            <Grid container spacing={2} alignItems="center" justifyContent="center" marginTop="10px">
-                <Grid item>
-                    <Typography>X0 coefficient:</Typography>
-                </Grid>
-                <Grid item>
-                    <TextField label="Input 1" variant="outlined" value={x0} onChange={(e) => setX0(e.target.value)} />
-                </Grid>
-                <Grid item>
-                    <Typography>Xk coefficient:</Typography>
-                </Grid>
-                <Grid item>
-                    <TextField label="Input 2" variant="outlined" value={xk} onChange={(e) => setXk(e.target.value)} />
-                </Grid>
-                <Grid item>
-                    <Typography>h (Step):</Typography>
-                </Grid>
-                <Grid item>
-                    <TextField label="Input 3" variant="outlined" value={step} onChange={(e) => setStep(e.target.value)} />
-                </Grid>
-            </Grid>
+            <Box marginTop = '25px'>
+                <Typography sx={{ float: 'left', margin: '15px'}}>Enter a sequence of numbers:</Typography>
+                <TextField
+                    label="Sequence"
+                    variant="outlined"
+                    sx={{
+                        width: "1000px",
+                    }}
+                    value={sequenceOfNumbers} onChange={(e) => setSequenceOfNumbers(e.target.value)} 
+                />
+            </Box>
+            <Box marginTop='25px'>
+                <Typography sx={{ float: 'left', margin: '15px' }}>Test cases:</Typography>
+                <TextField
+                    label="Cases"
+                    variant="outlined"
+                    sx={{ width: "500px", marginRight: "50px", float: 'left', }}
+                    value={testCases} onChange={(e) => setTestCases(e.target.value)}
+                />
+                <Box marginTop='10px' sx={{float: 'left'}}>
+                    <FormControlLabel
+                        control={<Checkbox defaultChecked />} label="Module 1"
+                        onChange={(e) => setModule1(!module1)}
+                    />
+                    <FormControlLabel control={<Checkbox />} label="Module 2"
+                        onChange={(e) => setModule2(!module2)}
+                    />
+                    <FormControlLabel control={<Checkbox />} label="Module 3"
+                        onChange={(e) => setModule3(!module3)}
+                    />
+                </Box>
+            </Box>
             {/*Start button*/}
             <Grid justifyContent="center"
                 container spacing={1}
-                sx={{ marginTop: '50px' }}
+                sx={{ marginTop: '120px' }}
             >
                 <Grid item xs={2} md={1}
                 >

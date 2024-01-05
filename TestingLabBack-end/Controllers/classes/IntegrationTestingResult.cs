@@ -1,11 +1,12 @@
 ﻿namespace TestingLabX.Controllers.classes
 {
-    public class FunctionalTestingResult
+    public class IntegrationlTestingResult
     {
         public int Id { get; set; }
         public int TestNumber { get; set; }
-        public string ExpectedResult { get; set; }
-        public string ActualResult { get; set; }
+        public int Sum { get; set; }
+        public int NumberOfElements { get; set; }
         public string TestResult { get; set; }
+        public double TheArithmeticMean { get; set; }
     }
 }
