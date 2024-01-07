@@ -95,7 +95,7 @@ export default function PersistentDrawerLeft() {
                 elevation={0}
                 open={open}
                 sx={{
-                    backgroundColor: `${theme.palette.background.default}`
+                    backgroundColor: `${theme.palette.background.paper}`
 ,
             }}>
                 <Toolbar>
