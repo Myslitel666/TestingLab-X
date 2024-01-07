@@ -141,6 +141,7 @@ const Testing: React.FC = () => {
                     <MyButton variant="contained"
                         color="primary"
                         onClick={handleCalculateClick}
+                        style={{ borderColor: 'black' }}
                     >
                         Calculate
                     </MyButton>
@@ -149,7 +150,8 @@ const Testing: React.FC = () => {
                     <MyButton variant="contained"
                         color="primary"
                         onClick={clearButtonClick}
-                        style={{ width: '115px' }}
+                        style={{ width: '115px', borderColor: 'black' }}
+
                     >
                         Clear
                     </MyButton>

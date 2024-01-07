@@ -95,8 +95,8 @@ export default function PersistentDrawerLeft() {
                 elevation={0}
                 open={open}
                 sx={{
-                    backgroundColor: `${theme.palette.background.paper}`
-,
+                    backgroundColor: `${theme.palette.action.disabledBackground}`
+                    //backgroundColor: `${theme.palette.background.paper}`
             }}>
                 <Toolbar>
                     <IconButton
@@ -144,7 +144,7 @@ export default function PersistentDrawerLeft() {
                         <ListItem>
                             <ListItemButton>
                                 <MailIcon sx={{ marginRight: '20px' }} />
-                                <MyTypography>Cause and Effect Diagram</MyTypography>
+                                <MyTypography>Module Diagram</MyTypography>
                             </ListItemButton>
                         </ListItem>
                     </MyLink>

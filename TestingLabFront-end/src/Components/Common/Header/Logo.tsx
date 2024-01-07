@@ -46,11 +46,11 @@ const Logo = () => {
             style={{ cursor: 'pointer', marginRight: '10px' }}
         >
             <img className={`image ${isHovered ? 'hidden' : ''}`}
-                src={isFirstImage ? '/images/store-x-yellow.png' : '/images/store-hover.png'}
+                src={isFirstImage ? '/images/store-x-yellow.png' : '/images/store-x.png'}
                 alt="Store Icon"
             />
             <img className={`image ${isHovered ? '' : 'hidden'}`}
-                src={isFirstImage ? '/images/store-x-yellow.png' : '/images/store-hover.png'}
+                src={isFirstImage ? '/images/store-x-yellow.png' : '/images/store-x.png'}
                 alt="Store Icon"
             />
         </div>

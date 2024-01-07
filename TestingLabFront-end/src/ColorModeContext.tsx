@@ -36,8 +36,8 @@ export const ColorModeProvider: React.FC<ColorModeProviderProps> = ({ children }
                 palette: {
                     mode: MyTheme === 'yellow' ? 'light' : 'dark',
                     primary: {
-                        main: MyTheme === 'yellow' ? '#0fba81' : '#FF19F8',
-                        dark: MyTheme === 'purple' ? '#0fba81' : '#FF19F8',
+                        main: MyTheme === 'yellow' ? '#0fba81' : '#ba0f0f',
+                        dark: MyTheme === 'purple' ? '#0fba81' : '#ba0f0f',
                     },
                     text: {
                         primary: MyTheme === 'yellow' ? '#000000' : '#FFFFFF',
@@ -46,6 +46,9 @@ export const ColorModeProvider: React.FC<ColorModeProviderProps> = ({ children }
                     background: {
                         default: MyTheme === 'yellow' ? '#FFFFFF' : '#060606',
                     },
+                    action: {
+                        disabledBackground: MyTheme === 'yellow' ? '#FFFFFF' : '#252525',
+                    }
                 },
             }),
         [MyTheme]

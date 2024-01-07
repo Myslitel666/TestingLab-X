@@ -39,7 +39,7 @@ export default function HeaderContent() {
                     variant="contained"
                     color="primary"
                     startIcon={<SearchIcon />}
-                    style={{ marginRight: '200px' }}
+                    style={{ marginRight: '200px', borderColor: 'black' }}
                 >
                     Search
                 </MyButton>
