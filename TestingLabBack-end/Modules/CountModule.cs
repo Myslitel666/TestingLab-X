@@ -8,7 +8,7 @@ namespace TestingLabX.Modules
         public string Sequence { get; set; }
         public CountModule(string sequence)
         {
-            sequence = sequence;
+            Sequence = sequence;
         }
         public int Count()
         {

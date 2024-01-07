@@ -23,6 +23,10 @@ import ProblemLab6 from './Components/Pages/TestingLab6/Problem';
 import ModuleDiagram from './Components/Pages/TestingLab6/ModuleDiagram';
 import TestingLab6 from './Components/Pages/TestingLab6/Testing';
 
+import ProblemLab7 from './Components/Pages/TestingLab7/Problem';
+import ModuleDiagram7 from './Components/Pages/TestingLab7/ModuleDiagram';
+import TestingLab7 from './Components/Pages/TestingLab7/Testing';
+
 function App() {
     return (
         <ColorModeProvider>
@@ -50,6 +54,11 @@ function App() {
                     <Route path="TestingLab6/Problem" element={<ProblemLab6 />} />
                     <Route path="TestingLab6/ModuleDiagram" element={<ModuleDiagram />} />
                     <Route path="TestingLab6/Testing" element={<TestingLab6 />} />
+
+                    //TestingLab7
+                    <Route path="TestingLab7/Problem" element={<ProblemLab7 />} />
+                    <Route path="TestingLab7/ModuleDiagram" element={<ModuleDiagram7 />} />
+                    <Route path="TestingLab7/Testing" element={<TestingLab7 />} />
                 </Routes>
             </Router>
         </ColorModeProvider>

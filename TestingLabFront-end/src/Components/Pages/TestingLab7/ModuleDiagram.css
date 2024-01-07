@@ -1,0 +1,8 @@
+﻿.product-box2 {
+    transition: transform 0.3s ease, border-color 1s ease; /* Плавный переход для всех свойств */
+    backface-visibility: hidden;
+}
+
+.product-box2:hover {
+    transform: scale(1.1);
+}
