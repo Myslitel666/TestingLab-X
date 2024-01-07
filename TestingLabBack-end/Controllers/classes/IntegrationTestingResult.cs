@@ -1,6 +1,6 @@
 ﻿namespace TestingLabX.Controllers.classes
 {
-    public class IntegrationlTestingResult
+    public class IntegrationTestingResult
     {
         public int Id { get; set; }
         public int TestNumber { get; set; }

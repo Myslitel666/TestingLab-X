@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TestingLabX.Controllers.classes;
-using TestingLabX.Controllers;
+using TestingLabX.Converts;
+using TestingLabX.Modules;
+using TestingLabX.Drivers;
+using TestingLabX.Modules.Plugs;
 
-namespace WebShopBack_end.Controllers
+namespace TestingLabX.Controllers
 {
     [ApiController]
     [Route("api")]
@@ -11,21 +14,93 @@ namespace WebShopBack_end.Controllers
         [HttpPost("testingLab6")]
         public IActionResult Calculate([FromBody] IntegrationTestingRequest request)
         {
-            //Производим работу методов
-            var functionalTestingList = new List<IntegrationlTestingResult>()
-            {
-                new IntegrationlTestingResult()
-                {
-                    Id = 2,
-                    NumberOfElements = 4,
-                    Sum = 6,
-                    TestNumber = 8,
-                    TestResult = "Passed",
-                    TheArithmeticMean = 3.5
-                }
-            };
+            int testCasesTopLevel = int.Parse(request.TestCases) - 2;
 
-            return Ok(functionalTestingList);
+            //Осуществляем тестирование модуля верхнего уровня
+            var sumPlug = new SumPlug(request.SequenceOfNumbers); //модуль-заглушка для подсчёта суммы
+            var countPlug = new CountPlug(request.SequenceOfNumbers); //модуль-заглушка для подсчёта кол-ва элементов
+            var arithmeticMeanModule = new ArithmeticMeanModule(sumPlug, countPlug); //модуль верхнего уровня
+            var sumDriver = new SumDriver(sumPlug); //драйвер для тестирования модуля суммы
+            var countDriver = new CountDriver(countPlug); //драйвер для тестирования модуля count
+            var integrationTestingList = new List<IntegrationTestingResult>(); //список результатов
+            var integrationlTestingResult = new IntegrationTestingResult();
+
+            for (int i = 0; i < testCasesTopLevel; i++)
+            {
+                try 
+                {
+                    integrationlTestingResult = new IntegrationTestingResult()
+                    {
+                        Id = i + 1,
+                        NumberOfElements = countPlug.Count(),
+                        Sum = sumDriver.Sum(),
+                        TestNumber = i + 1,
+                        TestResult = "Passed",
+                        TheArithmeticMean = arithmeticMeanModule.ArithmeticMean()
+                    };
+                }
+                catch 
+                {
+                    integrationlTestingResult = new IntegrationTestingResult()
+                    {
+                        Id = i + 1,
+                        NumberOfElements = countPlug.Count(),
+                        Sum = sumDriver.Sum(),
+                        TestNumber = i + 1,
+                        TestResult = "Failed",
+                    };
+                }
+
+                integrationTestingList.Add(integrationlTestingResult);
+            }
+
+            //Осуществляем тестирование модулей нижнего уровня
+            var sumModule = new SumModule(request.SequenceOfNumbers);
+            try
+            {
+                integrationlTestingResult = new IntegrationTestingResult()
+                {
+                    Id = testCasesTopLevel + 1,
+                    Sum = sumDriver.Sum(),
+                    TestNumber = testCasesTopLevel + 1,
+                    TestResult = "Passed",
+                };
+            }
+            catch
+            {
+                integrationlTestingResult = new IntegrationTestingResult()
+                {
+                    Id = testCasesTopLevel + 1,
+                    Sum = sumPlug.Sum(),
+                    TestNumber = testCasesTopLevel + 1,
+                    TestResult = "Failed",
+                };
+            };
+            integrationTestingList.Add(integrationlTestingResult);
+
+            try
+            {
+                integrationlTestingResult = new IntegrationTestingResult()
+                {
+                    Id = testCasesTopLevel + 2,
+                    NumberOfElements = sumDriver.Sum(),
+                    TestNumber = testCasesTopLevel + 2,
+                    TestResult = "Passed",
+                };
+            }
+            catch
+            {
+                integrationlTestingResult = new IntegrationTestingResult()
+                {
+                    Id = testCasesTopLevel + 2,
+                    NumberOfElements = sumDriver.Sum(),
+                    TestNumber = testCasesTopLevel + 2,
+                    TestResult = "Failed",
+                };
+            };
+            integrationTestingList.Add(integrationlTestingResult);
+
+            return Ok(integrationTestingList);
         }
     }
 }

@@ -30,12 +30,13 @@ const MyBox: React.FC<MyButtonProps> = (props) => {
             className="product-box"
             onMouseEnter={() => handleMouseEnter()}
             onMouseLeave={handleMouseLeave}
+            boxShadow={0}
             sx={{
                 border: `1px solid ${isHovered ? PrimaryDarkColor : PrimaryMainColor}`,
                 borderRadius: '10px',
                 padding: '10px',
                 cursor: 'pointer',
-                transition: 'border-color 1s ease, transform 0.3s ease,'
+                transition: 'border-color 1s ease, transform 0.3s ease,',
             }}
         />
     );

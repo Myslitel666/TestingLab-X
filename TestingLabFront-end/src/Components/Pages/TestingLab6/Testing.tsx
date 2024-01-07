@@ -24,35 +24,35 @@ const Testing: React.FC = () => {
         {
             field: 'testNumber',
             headerName: 'Test Number (№)',
-            width: 135,
+            width: 130,
             align: 'center',
             headerAlign: 'center'
         },
         {
             field: 'sum',
             headerName: 'Sum',
-            width: 200,
+            width: 150,
             align: 'center',
             headerAlign: 'center'
         },
         {
             field: 'numberOfElements',
             headerName: 'Number of elements',
-            width: 200,
+            width: 150,
             align: 'center',
             headerAlign: 'center'
         },
         {
             field: 'theArithmeticMean',
             headerName: 'The arithmetic mean',
-            width: 200,
+            width: 150,
             align: 'center',
             headerAlign: 'center'
         },
         {
             field: 'testResult',
             headerName: 'Test Result',
-            width: 200,
+            width: 150,
             align: 'center',
             headerAlign: 'center'
         },

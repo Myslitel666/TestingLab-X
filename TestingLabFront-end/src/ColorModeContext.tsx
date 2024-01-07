@@ -21,30 +21,30 @@ interface ColorModeProviderProps {
 }
 
 export const ColorModeProvider: React.FC<ColorModeProviderProps> = ({ children }) => {
-    const [MyTheme, setMyTheme] = useState<'red' | 'purple'>('red');
+    const [MyTheme, setMyTheme] = useState<'yellow' | 'purple'>('yellow');
 
     const toggleColorMode = () => {
-        setMyTheme(prevMode => (prevMode === 'red' ? 'purple' : 'red'));
+        setMyTheme(prevMode => (prevMode === 'yellow' ? 'purple' : 'yellow'));
     };
 
     const theme = useMemo(
         () =>
             createTheme({
                 typography: {
-                    fontFamily: 'Merienda, cursive'
+                    fontFamily: 'Century Gothic'
                 },
                 palette: {
-                    mode: 'dark', // âñåãäà ôèêñèðîâàííûé ðåæèì dark
+                    mode: MyTheme === 'yellow' ? 'light' : 'dark',
                     primary: {
-                        main: MyTheme === 'red' ? '#FF1A1A' : '#FF19F8',
-                        dark: MyTheme === 'red' ? '#FF19F8' : '#FF1A1A',
+                        main: MyTheme === 'yellow' ? '#0fba81' : '#FF19F8',
+                        dark: MyTheme === 'purple' ? '#0fba81' : '#FF19F8',
                     },
                     text: {
-                        primary: '#FFFFFF', // Устанавливаем цвет основного текста в темной теме
-                        secondary: '#CCCCCC', // Устанавливаем цвет второстепенного текста в темной теме (например, для подзаголовков и т. д.)
+                        primary: MyTheme === 'yellow' ? '#000000' : '#FFFFFF',
+                        //secondary: '#FFFFFF', // Устанавливаем цвет второстепенного текста в темной теме (например, для подзаголовков и т. д.)
                     },
                     background: {
-                        default: '#060606'
+                        default: MyTheme === 'yellow' ? '#FFFFFF' : '#060606',
                     },
                 },
             }),

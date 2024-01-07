@@ -8,6 +8,7 @@ import MyButton from '../MyButton';
 //MUI Import
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import Link from '@mui/material/Link';
 
@@ -45,24 +46,25 @@ export default function HeaderContent() {
             </div>
             {/*position: 'static' äëÿ èñïðàâëåíèÿ áàãîâ ñìåùåíèÿ îáúåêòîâ*/}
             {/*âî âðåìÿ óâåëè÷åíèÿ ëîãî*/}
-            <MyButton variant="outlined" color="primary"
+            <Button variant="outlined" color="primary"
                 style={{
                     marginRight: '10px',
                     borderWidth: '2px',
                     position: 'static',
+                    transition: 'background-color 5.3s ease;'
                 }}>
                 Sign in
-            </MyButton>
+            </Button>
 
-            <MyButton variant="outlined" color="primary"
+            <Button variant="outlined" color="primary"
                 style={{
                     borderWidth: '2px',
                     position: 'static',
-                    //transition: 'background-color 5.3s ease;'
+                    transition: 'background-color 5.3s ease;'
                 }}
             >
                 Sign up
-                </MyButton>
+                </Button>
         </div>
     );
 }

@@ -25,7 +25,7 @@ const SiteName: React.FC = () => {
             onMouseLeave={handleMouseLeave}
             sx={{
                 cursor: 'pointer',
-                color: isHovered ? `${primaryDarkColor}` : `${primaryMainColor}`,
+                //color: isHovered ? `${primaryDarkColor}` : `${primaryMainColor}`,
                 transition: 'color 1s ease',
                 width:'130px'
             }}
